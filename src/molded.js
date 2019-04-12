@@ -38,11 +38,15 @@
 
  /**
   * 
+  * The event class represents an action of adding some object.
+  * 
   */
- export class Set extends Event {
+ export class Add extends Event {
  }
 
  /**
+  * 
+  * The event class represents an action of updating some object.
   * 
   */
  export class Update extends Event {
@@ -50,11 +54,15 @@
 
  /**
   * 
+  * The event class represents an action of deleting some object.
+  * 
   */
  export class Delete extends Event {
  }
 
  /**
+  * 
+  * The event class represents an action of reading some object.
   * 
   */
  export class Get extends Event {
@@ -62,11 +70,15 @@
 
  /**
   * 
+  * The event class represents an action of listening some object.
+  * 
   */
  export class On extends Event {
  }
 
  /**
+  * 
+  * The event class represents an action of unlistening some object.
   * 
   */
  export class Off extends Event {
@@ -74,25 +86,27 @@
 
  /**
   * 
+  * The generic class represents a list events.
+  * 
   */
  export class Molded {
 
   /**
-   * 
+   * @returns {Add} Add
    */
-   get Set() {
-    return this._Set;
+   get Add() {
+    return this._Add;
   }
 
   /**
-    * @param {Set} Set
+    * @param {Add} Add
     */
-  set Set(Set) {
-    this._Set = Set;
+  set Add(Add) {
+    this._Add = Add;
   }
 
   /**
-   * 
+   * @returns {Update} Update
    */
   get Update() {
    return this._Update;
@@ -106,7 +120,7 @@
   }
 
   /**
-   * 
+   * @returns {Delete} Delete
    */
   get Delete() {
    return this._Delete;
@@ -120,7 +134,7 @@
   }
 
   /**
-   * 
+   * @returns {Get} Get
    */
   get Get() {
    return this._Get;
@@ -134,7 +148,7 @@
   }
 
   /**
-   * 
+   * @returns {On} On
    */
   get On() {
    return this._On;
@@ -148,7 +162,7 @@
   }
 
   /**
-   * 
+   * @returns {Off} Off
    */
   get Off() {
    return this._Off;
@@ -181,6 +195,8 @@
  }
 
  /**
+  * 
+  * The generic class represents a control of events.
   * 
   */
  export class Controlled {

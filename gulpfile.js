@@ -1,7 +1,24 @@
-function defaultTask(cb) {
- // place code for your default task here
- cb();
-}
+const { task, src, dest, series } = require("gulp");
+const eslint = require("gulp-eslint");
+const rename = require("gulp-rename");
+const terser = require("gulp-terser");
 
-const _default = defaultTask;
-export { _default as default };
+/**
+ * 
+ * Task of build from source and generate distribution file.
+ * 
+ */
+task("build", function() {
+ return src("src/molded.js")
+  .pipe(eslint())
+  .pipe(rename("molded.min.js"))
+  .pipe(terser())
+  .pipe(dest("dist/"));
+});
+
+/**
+ * 
+ * Default task.
+ * 
+ */
+task("default", series("build"));
