@@ -9,79 +9,50 @@
 
  /**
   * 
-  * The event class is quite flexible for listener from any notify.
+  * The event class represents a promise of adding some object.
   * 
   */
- export class Event extends Promise {
-
-  /**
-   * 
-   * Listener of event.
-   * 
-   * @returns {Promise} listener
-   */
-  get listener() {
-   return this._listener;
-  }
-
-  /**
-   * 
-   * Attach a listener of event.
-   * 
-   * @param {Promise} listener
-   */
-  set listener(listener) {
-   this._listener = listener;
-  }
-
+ export class Add extends Promise {
  }
 
  /**
   * 
-  * The event class represents an action of adding some object.
+  * The event class represents a promise of updating some object.
   * 
   */
- export class Add extends Event {
+ export class Update extends Promise {
  }
 
  /**
   * 
-  * The event class represents an action of updating some object.
+  * The event class represents a promise of deleting some object.
   * 
   */
- export class Update extends Event {
+ export class Delete extends Promise {
  }
 
  /**
   * 
-  * The event class represents an action of deleting some object.
+  * The event class represents a promise of reading some object.
   * 
   */
- export class Delete extends Event {
+ export class Get extends Promise {
  }
 
  /**
   * 
-  * The event class represents an action of reading some object.
+  * The event class represents a promise of listening some object.
   * 
   */
- export class Get extends Event {
+ export class On extends Promise {
  }
 
  /**
   * 
-  * The event class represents an action of listening some object.
+  * The event class represents a promise of unlistening some object.
   * 
   */
- export class On extends Event {
- }
-
- /**
-  * 
-  * The event class represents an action of unlistening some object.
-  * 
-  */
- export class Off extends Event {
+ export class Off extends Promise {
  }
 
  /**
@@ -176,7 +147,6 @@
   }
 
  }
-
 
  /**
   * 
