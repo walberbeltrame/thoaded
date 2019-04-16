@@ -104,17 +104,17 @@ import * as Molded from "../../dist/molded";
      this.transaction(this.store(data, "readwrite").update(data, data.id))
     );};
     // make delete promise
-    this.Delete = (id) => {return new Delete(
+    this.Delete = (data) => {return new Delete(
      // make delete transaction
-     this.transaction(this.store(data, "readwrite").delete(id))
+     this.transaction(this.store(data, "readwrite").delete(data.id))
     );};
     // make get promise
-    this.Get = (id) => {return new Get(
+    this.Get = (data) => {return new Get(
      // make get transaction
-     this.transaction(this.store(data, "readonly").get(id))
+     this.transaction(this.store(data, "readonly").get(data.id))
     );};
     // make on promise
-    this.On = (query, count) => {return new On(
+    this.On = (data, query, count) => {return new On(
      // make on transaction
      this.transaction(this.store(data, "readonly").getAll(query, count))
     );};
