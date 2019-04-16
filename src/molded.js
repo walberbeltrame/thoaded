@@ -63,17 +63,31 @@
  export class Molded {
 
   /**
-   * @returns {Add} Add
+   * 
+   * Make a list events with simple promise resolve. 
+   * 
    */
-   get Add() {
-    return this._Add;
+  constructor() {
+   this._Add = (data) => {return Add.resolve(data);};
+   this._Update = (data) => {return Update.resolve(data);};
+   this._Delete = (data) => {return Delete.resolve(data);};
+   this._Get = (data) => {return Get.resolve(data);};
+   this._On = (data) => {return On.resolve(data);};
+   this._Off = (data) => {return Off.resolve(data);};
   }
 
   /**
-    * @param {Add} Add
-    */
+   * @returns {Add} Add
+   */
+  get Add() {
+   return this._Add;
+  }
+
+  /**
+   * @param {Add} Add
+   */
   set Add(Add) {
-    this._Add = Add;
+   this._Add = Add;
   }
 
   /**
@@ -84,10 +98,10 @@
   }
 
   /**
-    * @param {Update} Update
-    */
+   * @param {Update} Update
+   */
   set Update(Update) {
-    this._Update = Update;
+   this._Update = Update;
   }
 
   /**
@@ -98,8 +112,8 @@
   }
 
   /**
-    * @param {Delete} Delete
-    */
+   * @param {Delete} Delete
+   */
   set Delete(Delete) {
    this._Delete = Delete;
   }
@@ -112,10 +126,10 @@
   }
 
   /**
-    * @param {Get} Get
-    */
+   * @param {Get} Get
+   */
   set Get(Get) {
-    this._Get = Get;
+   this._Get = Get;
   }
 
   /**
@@ -126,10 +140,10 @@
   }
 
   /**
-    * @param {On} On
-    */
+   * @param {On} On
+   */
   set On(On) {
-    this._On = On;
+   this._On = On;
   }
 
   /**
@@ -140,10 +154,10 @@
   }
 
   /**
-    * @param {Off} Off
-    */
+   * @param {Off} Off
+   */
   set Off(Off) {
-    this._Off = Off;
+   this._Off = Off;
   }
 
  }
@@ -183,6 +197,20 @@
   constructor(modeled, viewed) {
    this._modeled = modeled;
    this._viewed = viewed;
+  }
+
+  /**
+   * @returns {Modeled} modeled
+   */
+  get modeled() {
+   return this._modeled;
+  }
+
+  /**
+   * @returns {Viewed} viewed
+   */
+  get viewed() {
+   return this._viewed;
   }
 
  }
