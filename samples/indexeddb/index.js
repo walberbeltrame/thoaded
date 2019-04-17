@@ -1,6 +1,6 @@
 /**
  * 
- * TODO
+ * Make sample to use persistence classes with IndexedDB and paginating with DOM.
  * 
  * @author Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)
  * 
@@ -54,7 +54,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
 
  /**
   * 
-  * TODO
+  * Auxiliary class for database build.
   * 
   */
  class IndexedDBStore {
@@ -214,7 +214,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
 
  /**
   * 
-  * TODO
+  * A final modeled class for note data manipulation.
   * 
   */
  class NoteMoldeled extends Modeled {
@@ -222,54 +222,88 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
 
  /**
   * 
-  * TODO
+  * A final viewed class for note data pagination.
   * 
   */
  class NoteViewed extends Viewed {
 
   /**
    * 
-   * TODO
+   * Extends viewed class and make listener for all events.
    * 
    */
   constructor() {
-   // TODO
+   // run constructor in parent class
    super();
    // TODO
    this.On = new Molded();
-   // create global dispacher events
-   document.getElementById("add")
+   // make global dispacher events
+   document.querySelector("#add")
     .addEventListener("click", (event) => {
      this.On.Add(this.note)
-      .then((note) => {this.message("add", note);})}
+      .then((note) => {
+       // cleanup of note input
+       this.cleanup();
+       // make a message of successfully
+       this.message("Note added successfully.");
+      })}
     );
   }
 
+  /**
+   * @returns {Note} note
+   */
   get note() {
-   return new Note(document.getElementById("note").value);
+   return new Note(document.querySelector("#note").value);
+  }
+
+  /**
+   * @param {Note} note
+   */
+  set note(note) {
+   document.querySelector("#note").value = note.text;
   }
  
-  update(id) {
+  /**
+   * 
+   * Cleanup of note input.
+   * 
+   */
+  cleanup() {
+   // get page element of note input
+   let input = document.querySelector("#note");
+   // reset blank value of note input
+   input.value = null;
+   // force to check if input parent is dirty
+   input.parentNode.MaterialTextfield.checkDirty();
   }
- 
-  delete(id) {
-  }
- 
-  message(type, note) {
-   console.log(note.text);
+
+  /**
+   * @param {string} message 
+   */
+  message(message) {
+   // make a message in snackbar
+   document.querySelector("#snackbar").MaterialSnackbar.showSnackbar({
+    message : message
+   });
   }
 
  }
 
+ /**
+  * 
+  * A final controlled class for note data manipulation.
+  * 
+  */
  class NoteControlled extends Controlled {
 
   /**
    * 
-   * TODO
+   * Extends controlled class and make listener for all events.
    * 
    */
   constructor() {
-   // TODO
+   // run constructor in parent class
    super(new NoteMoldeled(), new NoteViewed());
    // TODO
    this.viewed.On.Add = function(note) {
