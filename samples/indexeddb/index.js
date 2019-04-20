@@ -6,7 +6,8 @@
  * 
  */
 
-import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
+import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
+ from "../../../dist/molded.min.js";
 
  /**
   * 
@@ -72,29 +73,29 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
    * @param {string} path
    */
   set path(path) {
-    this._path = path;
-   }
+   this._path = path;
+  }
  
-   /**
-    * @returns {string} path
-    */
-   get path() {
-    return this._path;
-   }
+  /**
+   * @returns {string} path
+   */
+  get path() {
+   return this._path;
+  }
  
-   /**
-    * @param {string} key
-    */
-   set key(key) {
-    this._key = key;
-   }
+  /**
+   * @param {string} key
+   */
+  set key(key) {
+   this._key = key;
+  }
  
-   /**
-    * @returns {string} key
-    */
-   get key() {
-    return this._key;
-   }
+  /**
+   * @returns {string} key
+   */
+  get key() {
+   return this._key;
+  }
 
  }
 
@@ -103,13 +104,15 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
   * The final class represents database methods in IndexedDB for persisting data.
   * 
   */
- class IndexedDBMolded extends Molded {
+ class IndexedDBModeled extends Modeled {
 
   /**
    * @param {string} name
    * @param {Array} stores
    */
   constructor(name, stores) {
+   // run constructor in parent class
+   super();
    // local database resource
    this._database = window.indexedDB ||
                     window.msIndexedDB ||
@@ -124,7 +127,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
      // for all stores
      stores.forEach(store => {
       // make object store
-      event.target.result.createObjectStore(store.path, {keyPath : store.key});
+      event.target.result.createObjectStore(store.path, {keyPath : store.key, autoIncrement : true});
      });
     };
     // event handler when request is successfully returned
@@ -133,30 +136,78 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
      this._target = event.target.result;
     };
     // make add promise
-    this.Add = (data) => {return new Add(
+    this.Add = (data) => {return new Add((resolve, reject) => {
      // make add transaction
-     this.transaction(this.store(data, "readwrite").add(data, data.id))
-    );};
+     this.transaction(this.store(data, "readwrite").add(data))
+      // request is successfully returned
+      .then((event) => {
+       // set identifier data
+       data.id = event.target.result;
+       // resolve promise
+       resolve(data); 
+      })
+      // request is incorrectly returned
+      .catch(() => {
+       // reject promise
+       reject(data);
+      })
+    });};
     // make update promise
-    this.Update = (data) => {return new Update(
+    this.Update = (data) => {return new Update((resolve, reject) => {
      // make update transaction
-     this.transaction(this.store(data, "readwrite").update(data, data.id))
-    );};
+     this.transaction(this.store(data, "readwrite").put(data))
+      // request is successfully returned
+      .then(() => {
+       // resolve promise
+       resolve(data); 
+      })
+      // request is incorrectly returned
+      .catch(() => {
+       // reject promise
+       reject(data);
+      })
+    });};
     // make delete promise
-    this.Delete = (data) => {return new Delete(
+    this.Delete = (data) => {return new Delete((resolve, reject) => {
      // make delete transaction
      this.transaction(this.store(data, "readwrite").delete(data.id))
-    );};
+      // request is successfully returned
+      .then(() => {
+       // resolve promise
+       resolve(data); 
+      })
+      // request is incorrectly returned
+      .catch(() => {
+       // reject promise
+       reject(data);
+      })
+    });};
     // make get promise
-    this.Get = (data) => {return new Get(
-     // make get transaction
-     this.transaction(this.store(data, "readonly").get(data.id))
-    );};
-    // make on promise
-    this.On = (data, query, count) => {return new On(
+    this.Get = (data) => {return new Get((resolve, reject) => {
      // make on transaction
-     this.transaction(this.store(data, "readonly").getAll(query, count))
-    );};
+     this.transaction(this.store(data, "readonly").getAll())
+      // request is successfully returned
+      .then((event) => {
+       // make an array of notes
+       let notes = [];
+       // for all result
+       event.target.result.forEach(data => {
+        // make a note with data
+        let note = new Note(data._text);
+        // set note identifier 
+        note.id = data._id;
+        // push note in array
+        notes.push(note);
+       });
+       // resolve promise
+       resolve(notes); 
+      })
+      // request is incorrectly returned
+      .catch(() => {
+       // reject promise
+       reject();
+      })
+    });};
    }
   }
 
@@ -217,7 +268,18 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
   * A final modeled class for note data manipulation.
   * 
   */
- class NoteMoldeled extends Modeled {
+ class NoteMoldeled extends IndexedDBModeled {
+
+  /**
+   * 
+   * Extends modeled class and make listener for all events.
+   * 
+   */
+  constructor() {
+   // run constructor in parent class
+   super("Molded", [new IndexedDBStore("Note", "_id")]);
+  }
+
  }
 
  /**
@@ -235,35 +297,312 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
   constructor() {
    // run constructor in parent class
    super();
-   // TODO
+   // make add event
+   this.Add = (note) => {
+    // make add promise
+    return new Add((resolve, reject) => {
+     // verify node is valid
+     if (note && note.id) {
+      // get page element of list
+      let list = this.list;
+      // make template by list
+      let template = this.template(list);
+      // get item of template
+      let item = this.item(template);
+      // get text of item
+      let text = item.text;
+      // get button of item
+      let button = item.button;
+      // set text content
+      text.textContent = note.text;
+      // set text identifier
+      text.setAttribute("id", note.id);
+      // set text data
+      text.setAttribute("data-text", note.text);
+      // bind an event handler to change text
+      text.addEventListener("blur", this.update);
+      // set button identifier
+      button.setAttribute("id", note.id);
+      // bind an event handler to click button
+      button.addEventListener("click", this.delete);
+      // append the item in list
+      list.appendChild(template);
+      // resolve promise
+      resolve(note);
+     } else {
+      // reject promise
+      reject(note);
+     } 
+    });
+   };
+   // make delete event
+   this.Delete = (note) => {
+    // make delete promise
+    return new Delete((resolve, reject) => {
+     // verify node is valid
+     if (note && note.id) {
+      // get page element of list
+      let list = this.list;
+      // delete element in list
+      list.removeChild(this.element(note.id));
+      // resolve promise
+      resolve(note);
+     } else {
+      // reject promise
+      reject(note);
+     } 
+    });
+   };
+   // molded method to a single listener for all events in page
    this.On = new Molded();
-   // make global dispacher events
-   document.querySelector("#add")
-    .addEventListener("click", (event) => {
-     this.On.Add(this.note)
-      .then((note) => {
-       // cleanup of note input
-       this.cleanup();
-       // make a message of successfully
-       this.message("Note added successfully.");
-      })}
-    );
+   // get page element of button
+   let button = this.button;
+   // get page element of input
+   let input = this.input;
+   // bind an event handler to click button
+   button.addEventListener("click", this.add);
+   // bind an event handler to enter from input text
+   input.addEventListener("keyup", (event) => {
+    // enter key on the keyboard
+    if (event.keyCode === 13) {
+     // stops the default action
+     event.preventDefault();
+     // remove focus from input text
+     input.blur();
+     // trigger button with a click
+     button.click();
+    }
+   });
+   // bind an event handler to window load
+   window.addEventListener("load", this.load);
+  }
+
+  /**
+   * @returns {any} input
+   */
+  get input() {
+   // get page element of input
+   return document.querySelector("input");
+  }
+
+  /**
+   * @returns {any} button
+   */
+  get button() {
+   // get page element of button
+   return document.querySelector("button");
+  }
+
+  /**
+   * @returns {any} list
+   */
+  get list() {
+   // get page element of list
+   return document.querySelector("ul");
+  }
+
+  /**
+   * @param {any} element
+   * @returns {any} template
+   */
+  template(element) {
+   // clone page element of template
+   return element.querySelector("template").content.cloneNode(true);
+  }
+
+  /**
+   * @param {any} element
+   * @returns {any} item
+   */
+  item(element) {
+   return {
+    // get page element of text
+    text : element.querySelector("div"),
+    // get page element of button
+    button : element.querySelector("button")
+   }
   }
 
   /**
    * @returns {Note} note
    */
   get note() {
-   return new Note(document.querySelector("#note").value);
+   // make a note of input
+   return new Note(this.input.value);
   }
 
   /**
-   * @param {Note} note
+   * @param {any} element
+   * @returns {Note} note
    */
-  set note(note) {
-   document.querySelector("#note").value = note.text;
+  get(element) {
+   // make a note of element
+   let note = new Note(element.textContent);
+   // set text identifier
+   note.id = parseInt(element.id || element.parentNode.id, 10);
+   // return note
+   return note;
   }
- 
+
+  /**
+   * @param {string} id
+   * @returns {any} element 
+   */
+  element(id) {
+   // get page element of id
+   return document.getElementById(id).parentNode.parentNode;
+  }
+
+  /**
+   * 
+   * Make event to required input
+   * 
+   */
+  required() {
+   // get page element of note input
+   let input = this.input;
+   // set attribute required in input
+   input.setAttribute("required", true);
+   // force to check if input parent is validity
+   input.parentNode.MaterialTextfield.checkValidity();
+   // wait three seconds
+   setTimeout(()=>{
+    // remove attribute required in input
+    input.removeAttribute("required");
+    // force to check if input parent is validity
+    input.parentNode.MaterialTextfield.checkValidity();
+   }, 3000);
+  }
+
+  /**
+   * 
+   * Make event handler to load notes
+   * 
+   * @returns {function} load
+   */
+  get load() {
+   // make event to load notes
+   return (event) => {
+    // stops the default action
+    event.preventDefault();
+    // wait sync events
+    setTimeout(() => {
+     // dispatch event to get notes
+     this.On.Get(Note.prototype).then((notes) => {
+      // for all notes
+      notes.forEach(note => {
+       // dispatch event to add note
+       this.Add(note).then(() => {});
+      });
+     });
+    }, 0);
+   }
+  }
+
+  /**
+   * 
+   * Make event handler to add note
+   * 
+   * @returns {function} add
+   */
+  get add() {
+   // make event to add note
+   return (event) => {
+    // stops the default action
+    event.preventDefault();
+    // get note of input
+    let note = this.note;
+    // verify if note is valid
+    if (note.text) {
+     // cleanup of note input
+     this.cleanup();
+     // dispatch event to add note
+     this.On.Add(note).then((note) => {
+      // add note in list
+      this.Add(note).then(() => {
+       // make a message of successfully
+       this.message("Note added successfully.");
+      });
+     })
+     // exception in event to add note
+     .catch(() => {
+      // make a error of unsuccessfully
+      this.error("Note not added.");
+     });
+    } else {
+     // dispatch event to required input
+     this.required();
+    }
+   }
+  }
+
+  /**
+   * 
+   * Make event handler to update note
+   * 
+   * @returns {function} update
+   */
+  get update() {
+   // make event to update note
+   return (event) => {
+    // stops the default action
+    event.preventDefault();
+    // get note of event
+    let note = this.get(event.target);
+    // verify if note is valid
+    if (note.text) {
+     // dispatch event to update note
+     this.On.Update(note).then((note) => {
+      // update data with text
+      event.target.setAttribute("data-text", note.text);
+      // make a message of successfully
+      this.message("Note updated successfully.");
+     })
+     // exception in event to update note
+     .catch(() => {
+      // reset text with data
+      event.target.textContent = event.target.getAttribute("data-text");
+      // make a error of unsuccessfully
+      this.error("Note not updated.");
+     });
+    } else {
+     // reset text with data
+     event.target.textContent = event.target.getAttribute("data-text");
+     // make a error of unsuccessfully
+     this.error("Note is required.");
+    }
+   }
+  }
+
+  /**
+   * 
+   * Make event handler to delete note
+   * 
+   * @returns {function} delete
+   */
+  get delete() {
+   // make event to delete note
+   return (event) => {
+    // stops the default action
+    event.preventDefault();
+    // get note of event
+    let note = this.get(event.target);
+    // dispatch event to delete note
+    this.On.Delete(note).then((note) => {
+     // delete note in list
+     this.Delete(note).then(() => {
+      // make a message of successfully
+      this.message("Note deleted successfully.");
+     });
+    })
+    // exception in event to delete note
+    .catch(() => {
+     // make a error of unsuccessfully
+     this.error("Note not deleted.");
+    });
+   }
+  }
+
   /**
    * 
    * Cleanup of note input.
@@ -271,7 +610,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
    */
   cleanup() {
    // get page element of note input
-   let input = document.querySelector("#note");
+   let input = this.input;
    // reset blank value of note input
    input.value = null;
    // force to check if input parent is dirty
@@ -283,7 +622,17 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
    */
   message(message) {
    // make a message in snackbar
-   document.querySelector("#snackbar").MaterialSnackbar.showSnackbar({
+   document.querySelector("#message").MaterialSnackbar.showSnackbar({
+    message : message
+   });
+  }
+
+  /**
+   * @param {string} message 
+   */
+  error(message) {
+   // make a message in snackbar
+   document.querySelector("#error").MaterialSnackbar.showSnackbar({
     message : message
    });
   }
@@ -292,7 +641,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
 
  /**
   * 
-  * A final controlled class for note data manipulation.
+  * A final controlled class for acts on both modeled and viewed.
   * 
   */
  class NoteControlled extends Controlled {
@@ -305,13 +654,29 @@ import {Molded, Modeled, Viewed, Controlled} from "../../../src/molded.js";
   constructor() {
    // run constructor in parent class
    super(new NoteMoldeled(), new NoteViewed());
-   // TODO
-   this.viewed.On.Add = function(note) {
-    // TODO
-    return new Promise((resolve, reject) => {
-     // TODO moldeled
-     resolve(note);
-    });  
+   // get modeled listener
+   let modeled = this.modeled;
+   // get viewed listener
+   let viewed = this.viewed;
+   // make add event in viewed listener
+   viewed.On.Add = function(note) {
+    // dispatch add event to modeled listener
+    return modeled.Add(note);
+   };
+   // make update event in viewed listener
+   viewed.On.Update = function(note) {
+    // dispatch update event to modeled listener
+    return modeled.Update(note);
+   };
+   // make delete event in viewed listener
+   viewed.On.Delete = function(note) {
+    // dispatch delete event to modeled listener
+    return modeled.Delete(note);
+   };
+   // make get event in viewed listener
+   viewed.On.Get = function(note) {
+    // dispatch get event to modeled listener
+    return modeled.Get(note);
    };
   }
 
