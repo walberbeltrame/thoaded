@@ -11,5 +11,23 @@
     "gulp-rename": "^1.4.0",
     "gulp-terser": "^1.1.7",
     "terser": "^3.17.0"
-  }
+  },
+  "name": "@walberbeltrame/molded",
+  "description": "The source for a library for simple and fast design pattern of model, view and controller in supported modern javascript environments.",
+  "version": "0.0.1",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walberbeltrame/molded.git"
+  },
+  "keywords": [
+    "molded"
+  ],
+  "author": "Walber Beltrame <walber.beltrame@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/walberbeltrame/molded/issues"
+  },
+  "homepage": "https://github.com/walberbeltrame/molded#readme"
 }
