@@ -4,7 +4,7 @@ The source for a library for simple and fast design pattern of model, view and c
 ## Installation
 Install the Molded:
 ```bash
-npm install @walberbeltrame/molded@latest --save
+npm i @walberbeltrame/molded --save
 ```
 ## Documentation
 Molded applications are built by composing a series of simple components. By convention, components are made up of extends javascript classes.
