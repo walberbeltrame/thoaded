@@ -1,28 +1,5 @@
-# Molded
-The source for a library for simple and fast design pattern of model, view and controller in supported modern javascript environments.
-
-## Installation
-...
-npm install @walberbeltrame/molded@latest --save
-...
-
-## Documentation
-Molded applications are built by composing a series of simple components. By convention, components are made up of extends javascript classes.
-...
-<!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="utf-8" />
-  <title>Hello, World!</title>
- </head>
- <body>
-  <script type="module" src="index.js"></script>
- </body>
-</html>
-...
-...
 import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
- from "<path>/dist/molded.min.js";
+ from "../../dist/molded.min.js";
 
  /**
   * 
@@ -107,16 +84,3 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
  }
 
 export const controlled = new SampleControlled();
-...
-
-## Samples
-The [IndexedDB](http://walberbeltrame.github.io/molded/samples/indexeddb/) is a good place to start learning how to use Molded.
-
-## Compatibility
-Molded supports all browsers that are [ES6-compliant](http://kangax.github.io/compat-table/es6/). 
-
-## Changelog
-Detailed changes for each release are documented in the [release notes](https://github.com/vuejs/vue/releases).
-
-## License
-Licensed under the [MIT](http://opensource.org/licenses/MIT) License.
