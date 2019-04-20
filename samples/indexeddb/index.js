@@ -7,7 +7,7 @@
  */
 
 import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
- from "../../../dist/molded.min.js";
+ from "../../dist/molded.min.js";
 
  /**
   * 
