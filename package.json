@@ -24,10 +24,13 @@
   "keywords": [
     "molded"
   ],
-  "author": "Walber Beltrame <walber.beltrame@gmail.com>",
+  "author": {
+    "name": "Walber Antonio Ramos Beltrame",
+    "email": "walber.beltrame@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/walberbeltrame/molded/issues"
   },
-  "homepage": "https://github.com/walberbeltrame/molded#readme"
+  "homepage": "https://walberbeltrame.github.io/molded/"
 }
