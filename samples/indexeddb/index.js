@@ -495,7 +495,7 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
        this.Add(note).then(() => {});
       });
      });
-    }, 0);
+    }, 1000);
    }
   }
 
