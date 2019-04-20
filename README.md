@@ -2,13 +2,13 @@
 The source for a library for simple and fast design pattern of model, view and controller in supported modern javascript environments.
 
 ## Installation
-...
+Install the Molded:
+```bash
 npm install @walberbeltrame/molded@latest --save
-...
-
+```
 ## Documentation
 Molded applications are built by composing a series of simple components. By convention, components are made up of extends javascript classes.
-...
+```html
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -19,8 +19,8 @@ Molded applications are built by composing a series of simple components. By con
   <script type="module" src="index.js"></script>
  </body>
 </html>
-...
-...
+```
+```javascript
 import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
  from "<path>/dist/molded.min.js";
 
@@ -107,7 +107,7 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
  }
 
 export const controlled = new SampleControlled();
-...
+```
 
 ## Samples
 The [IndexedDB](http://walberbeltrame.github.io/molded/samples/indexeddb/) is a good place to start learning how to use Molded.
