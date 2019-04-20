@@ -116,7 +116,7 @@ The [IndexedDB](http://walberbeltrame.github.io/molded/samples/indexeddb/) is a 
 Molded supports all browsers that are [ES6-compliant](http://kangax.github.io/compat-table/es6/). 
 
 ## Changelog
-Detailed changes for each release are documented in the [release notes](https://github.com/vuejs/vue/releases).
+Detailed changes for each release are documented in the [release notes](https://github.com/walberbeltrame/molded/releases).
 
 ## License
 Licensed under the [MIT](http://opensource.org/licenses/MIT) License.
