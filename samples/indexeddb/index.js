@@ -113,102 +113,115 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
   constructor(name, stores) {
    // run constructor in parent class
    super();
-   // local database resource
-   this._database = window.indexedDB ||
-                    window.msIndexedDB ||
-                    window.mozIndexedDB ||
-                    window.webkitIndexedDB;
-   // verify local database
-   if (this._database) {
-    // initialize local database
-    this._open = this._database.open(name);
-    // event handler when request is upgrade needed
-    this._open.onupgradeneeded = (event) => {
-     // for all stores
-     stores.forEach(store => {
-      // make object store
-      event.target.result.createObjectStore(store.path, {keyPath : store.key, autoIncrement : true});
-     });
-    };
-    // event handler when request is successfully returned
-    this._open.onsuccess = (event) => {
-     // set local target
-     this._target = event.target.result;
-    };
-    // make add promise
-    this.Add = (data) => {return new Add((resolve, reject) => {
-     // make add transaction
-     this.transaction(this.store(data, "readwrite").add(data))
-      // request is successfully returned
-      .then((event) => {
-       // set identifier data
-       data.id = event.target.result;
-       // resolve promise
-       resolve(data); 
-      })
-      // request is incorrectly returned
-      .catch(() => {
-       // reject promise
-       reject(data);
-      })
-    });};
-    // make update promise
-    this.Update = (data) => {return new Update((resolve, reject) => {
-     // make update transaction
-     this.transaction(this.store(data, "readwrite").put(data))
-      // request is successfully returned
-      .then(() => {
-       // resolve promise
-       resolve(data); 
-      })
-      // request is incorrectly returned
-      .catch(() => {
-       // reject promise
-       reject(data);
-      })
-    });};
-    // make delete promise
-    this.Delete = (data) => {return new Delete((resolve, reject) => {
-     // make delete transaction
-     this.transaction(this.store(data, "readwrite").delete(data.id))
-      // request is successfully returned
-      .then(() => {
-       // resolve promise
-       resolve(data); 
-      })
-      // request is incorrectly returned
-      .catch(() => {
-       // reject promise
-       reject(data);
-      })
-    });};
-    // make get promise
-    this.Get = (data) => {return new Get((resolve, reject) => {
-     // make on transaction
-     this.transaction(this.store(data, "readonly").getAll())
-      // request is successfully returned
-      .then((event) => {
-       // make an array of notes
-       let notes = [];
-       // for all result
-       event.target.result.forEach(data => {
-        // make a note with data
-        let note = new Note(data._text);
-        // set note identifier 
-        note.id = data._id;
-        // push note in array
-        notes.push(note);
+   // create promise to sync events when opening IndexedDB
+   return new Promise((resolve, reject) => {
+    // local database resource
+    this._database = window.indexedDB ||
+                      window.msIndexedDB ||
+                      window.mozIndexedDB ||
+                      window.webkitIndexedDB;
+    // verify local database
+    if (this._database) {
+      // initialize local database
+      this._open = this._database.open(name);
+      // event handler when request is upgrade needed
+      this._open.onupgradeneeded = (event) => {
+       // for all stores
+       stores.forEach(store => {
+        // make object store
+        event.target.result.createObjectStore(store.path, {keyPath : store.key, autoIncrement : true});
        });
+      };
+      // event handler when request is successfully returned
+      this._open.onsuccess = (event) => {
+       // set local target
+       this._target = event.target.result;
        // resolve promise
-       resolve(notes); 
-      })
-      // request is incorrectly returned
-      .catch(() => {
+       resolve(this);
+      };
+      // event handler when request is unsuccessfully returned
+      this._open.onerror = (event) => {
        // reject promise
-       reject();
-      })
-    });};
-   }
+       reject(event);
+      };
+      // make add promise
+      this.Add = (data) => {return new Add((resolve, reject) => {
+      // make add transaction
+      this.transaction(this.store(data, "readwrite").add(data))
+       // request is successfully returned
+       .then((event) => {
+        // set identifier data
+        data.id = event.target.result;
+        // resolve promise
+        resolve(data); 
+       })
+       // request is incorrectly returned
+       .catch(() => {
+        // reject promise
+        reject(data);
+       })
+      });};
+      // make update promise
+      this.Update = (data) => {return new Update((resolve, reject) => {
+      // make update transaction
+      this.transaction(this.store(data, "readwrite").put(data))
+       // request is successfully returned
+       .then(() => {
+        // resolve promise
+        resolve(data); 
+       })
+       // request is incorrectly returned
+       .catch(() => {
+       // reject promise
+        reject(data);
+       })
+      });};
+      // make delete promise
+      this.Delete = (data) => {return new Delete((resolve, reject) => {
+      // make delete transaction
+      this.transaction(this.store(data, "readwrite").delete(data.id))
+       // request is successfully returned
+       .then(() => {
+        // resolve promise
+        resolve(data); 
+       })
+       // request is incorrectly returned
+       .catch(() => {
+        // reject promise
+        reject(data);
+       })
+      });};
+      // make get promise
+      this.Get = (data) => {return new Get((resolve, reject) => {
+      // make on transaction
+      this.transaction(this.store(data, "readonly").getAll())
+       // request is successfully returned
+       .then((event) => {
+        // make an array of notes
+        let notes = [];
+        // for all result
+        event.target.result.forEach(data => {
+         // make a note with data
+         let note = new Note(data._text);
+         // set note identifier 
+         note.id = data._id;
+         // push note in array
+         notes.push(note);
+        });
+        // resolve promise
+        resolve(notes); 
+       })
+       // request is incorrectly returned
+       .catch(() => {
+        // reject promise
+        reject();
+       })
+      });};
+    } else {
+     // reject promise
+     reject();
+    }
+   });
   }
 
   /**
@@ -373,8 +386,6 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
      button.click();
     }
    });
-   // bind an event handler to window load
-   window.addEventListener("load", this.load);
   }
 
   /**
@@ -478,25 +489,17 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
    * 
    * Make event handler to load notes
    * 
-   * @returns {function} load
+   * @returns {Promise} load
    */
   get load() {
-   // make event to load notes
-   return (event) => {
-    // stops the default action
-    event.preventDefault();
-    // wait sync events
-    setTimeout(() => {
-     // dispatch event to get notes
-     this.On.Get(Note.prototype).then((notes) => {
-      // for all notes
-      notes.forEach(note => {
-       // dispatch event to add note
-       this.Add(note).then(() => {});
-      });
-     });
-    }, 1000);
-   }
+   // dispatch event to get notes
+   return this.On.Get(Note.prototype).then((notes) => {
+    // for all notes
+    notes.forEach(note => {
+     // dispatch event to add note
+     this.Add(note).then(() => {});
+    });
+   });
   }
 
   /**
@@ -650,10 +653,12 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
    * 
    * Extends controlled class and make listener for all events.
    * 
+   * @param {NoteModeled} noteModeled 
+   * @param {NoteViewed} noteViewed 
    */
-  constructor() {
+  constructor(noteModeled, noteViewed) {
    // run constructor in parent class
-   super(new NoteMoldeled(), new NoteViewed());
+   super(noteModeled, noteViewed);
    // get modeled listener
    let modeled = this.modeled;
    // get viewed listener
@@ -682,4 +687,13 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
 
  }
 
- export const controlled = new NoteControlled();
+ export const controlled = new NoteMoldeled().then(moldeled => {
+  // make a controlled listener
+  return new NoteControlled(moldeled, new NoteViewed());
+ }).then((controlled) => {
+  // dispatch load event to viewed listener
+  return controlled.viewed.load.then(() => {
+   // return controlled
+   return controlled;
+  });
+ });
