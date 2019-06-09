@@ -14,7 +14,7 @@
   },
   "name": "@walberbeltrame/molded",
   "description": "The source for a library for simple and fast design pattern of model, view and controller in supported modern javascript environments.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "gulpfile.js",
   "dependencies": {},
   "repository": {
