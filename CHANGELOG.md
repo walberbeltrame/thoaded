@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Bug in sync events when load notes of IndexedDB sample
+
 ## 0.0.5
 
 * Fix the bug in grid of IndexedDB sample
