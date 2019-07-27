@@ -75,7 +75,7 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
    // make on event in modeled listener
    modeled.On("Hello, World!").then((text) =>{
     // dispatch on event to viewed listener
-    viewed.On(text).then((text)=> {
+    viewed.On(text).then((text) => {
      // print successfully 
      console.log("Print " + text + " successfully.");
     });

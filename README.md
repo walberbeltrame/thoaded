@@ -1,11 +1,19 @@
 # Molded
-The source for a library for simple and fast design pattern of model, view and controller in supported modern javascript environments.
+The source for a library for simple and fast design pattern of model, view and controller in supported modern programming languages.
 
 ## Installation
+### Javascript
 Install the Molded:
 ```bash
 npm i @walberbeltrame/molded --save
 ```
+### Dart
+You should ensure that you add the router as a dependency in your dart project:
+```yaml
+dependencies:
+ molded: "^0.0.7"
+```
+
 ## Documentation
 Molded applications are built by composing a series of simple components. By convention, components are made up of extends javascript classes.
 ```html
@@ -98,7 +106,7 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
    // make on event in modeled listener
    modeled.On("Hello, World!").then((text) =>{
     // dispatch on event to viewed listener
-    viewed.On(text).then((text)=> {
+    viewed.On(text).then((text) => {
      // print successfully 
      console.log("Print " + text + " successfully.");
     });
@@ -113,6 +121,8 @@ export const controlled = new SampleControlled();
 The [IndexedDB](http://walberbeltrame.github.io/molded/samples/indexeddb/) is a good place to start learning how to use Molded.
 
 ## Compatibility
+
+### Javascript
 Molded supports all browsers that are [ES6-compliant](http://kangax.github.io/compat-table/es6/). 
 
 ## Changelog

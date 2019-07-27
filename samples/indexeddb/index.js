@@ -366,8 +366,8 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
      } 
     });
    };
-   // molded method to a single listener for all events in page
-   this.On = new Molded();
+   // molded object to a single dispatcher for all events in page
+   this.molded = new Molded();
    // get page element of button
    let button = this.button;
    // get page element of input
@@ -493,7 +493,7 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
    */
   get load() {
    // dispatch event to get notes
-   return this.On.Get(Note.prototype).then((notes) => {
+   return this.molded.Get(Note.prototype).then((notes) => {
     // for all notes
     notes.forEach(note => {
      // dispatch event to add note
@@ -520,7 +520,7 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
      // cleanup of note input
      this.cleanup();
      // dispatch event to add note
-     this.On.Add(note).then((note) => {
+     this.molded.Add(note).then((note) => {
       // add note in list
       this.Add(note).then(() => {
        // make a message of successfully
@@ -555,7 +555,7 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
     // verify if note is valid
     if (note.text) {
      // dispatch event to update note
-     this.On.Update(note).then((note) => {
+     this.molded.Update(note).then((note) => {
       // update data with text
       event.target.setAttribute("data-text", note.text);
       // make a message of successfully
@@ -591,7 +591,7 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
     // get note of event
     let note = this.get(event.target);
     // dispatch event to delete note
-    this.On.Delete(note).then((note) => {
+    this.molded.Delete(note).then((note) => {
      // delete note in list
      this.Delete(note).then(() => {
       // make a message of successfully
@@ -664,22 +664,22 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
    // get viewed listener
    let viewed = this.viewed;
    // make add event in viewed listener
-   viewed.On.Add = function(note) {
+   viewed.molded.Add = function(note) {
     // dispatch add event to modeled listener
     return modeled.Add(note);
    };
    // make update event in viewed listener
-   viewed.On.Update = function(note) {
+   viewed.molded.Update = function(note) {
     // dispatch update event to modeled listener
     return modeled.Update(note);
    };
    // make delete event in viewed listener
-   viewed.On.Delete = function(note) {
+   viewed.molded.Delete = function(note) {
     // dispatch delete event to modeled listener
     return modeled.Delete(note);
    };
    // make get event in viewed listener
-   viewed.On.Get = function(note) {
+   viewed.molded.Get = function(note) {
     // dispatch get event to modeled listener
     return modeled.Get(note);
    };

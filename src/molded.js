@@ -1,7 +1,7 @@
 /**
  * 
  * The source for a library for simple and fast design pattern of model,
- * view and controller in supported modern javascript environments.
+ * view and controller in supported modern programming languages.
  * 
  * @author Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)
  * 
@@ -41,6 +41,14 @@
 
  /**
   * 
+  * The event class represents a promise of querying objects.
+  * 
+  */
+ export class Query extends Promise {
+ }
+
+ /**
+  * 
   * The event class represents a promise of listening some object.
   * 
   */
@@ -72,6 +80,7 @@
    this._Update = (data) => {return Update.resolve(data);};
    this._Delete = (data) => {return Delete.resolve(data);};
    this._Get = (data) => {return Get.resolve(data);};
+   this._Query = (data) => {return Query.resolve(data);};
    this._On = (data) => {return On.resolve(data);};
    this._Off = (data) => {return Off.resolve(data);};
   }
@@ -133,6 +142,20 @@
   }
 
   /**
+   * @returns {Query} Query
+   */
+  get Query() {
+   return this._Query;
+  }
+
+  /**
+   * @param {Query} Query
+   */
+  set Query(Query) {
+   this._Query = Query;
+  }
+
+  /**
    * @returns {On} On
    */
   get On() {
@@ -160,11 +183,25 @@
    this._Off = Off;
   }
 
+  /**
+   * @returns {Molded} molded
+   */
+  get molded() {
+   return this._molded;
+  }
+
+  /**
+   * @param {Molded} molded
+   */
+  set molded(molded) {
+   this._molded = molded;
+  }
+
  }
 
  /**
   * 
-  * A modeled class might have a single listener for all events in source.
+  * A modeled class might have a single listener for all model events in source.
   * 
   */
  export class Modeled extends Molded {
@@ -172,7 +209,7 @@
 
  /**
   * 
-  * A viewed class might have a single listener for all events in source.
+  * A viewed class might have a single listener for all view events in source.
   * 
   */
  export class Viewed extends Molded {

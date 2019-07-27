@@ -1,0 +1,19 @@
+name: molded
+version: 0.0.7
+description: >-
+ The source for a library for simple and fast design pattern of model,
+ view and controller in supported modern programming languages.
+author: Walber Antonio Ramos Beltrame <walber.beltrame@gmail.com>
+homepage: https://walberbeltrame.github.io/molded/
+documentation: https://walberbeltrame.github.io/molded/dart/docs
+dependencies:
+ async: ^2.2.0
+ flutter:
+  sdk: flutter
+ meta: ^1.1.6
+dev_dependencies:
+ test: ^1.6.3
+ flutter_test:
+  sdk: flutter
+environment:
+ sdk: '>=2.0.0 <3.0.0'

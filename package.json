@@ -13,8 +13,8 @@
     "terser": "^3.17.0"
   },
   "name": "@walberbeltrame/molded",
-  "description": "The source for a library for simple and fast design pattern of model, view and controller in supported modern javascript environments.",
-  "version": "0.0.6",
+  "description": "The source for a library for simple and fast design pattern of model, view and controller in supported modern programming languages.",
+  "version": "0.0.7",
   "main": "gulpfile.js",
   "dependencies": {},
   "repository": {

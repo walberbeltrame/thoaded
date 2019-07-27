@@ -1,3 +1,7 @@
+## 0.0.7
+
+* Make a similar code for other modern languages ​​like CSharp, Python, Java, Swift and Dart
+
 ## 0.0.6
 
 * Bug in sync events when load notes of IndexedDB sample
