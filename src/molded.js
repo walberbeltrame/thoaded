@@ -9,62 +9,6 @@
 
  /**
   * 
-  * The event class represents a promise of adding some object.
-  * 
-  */
- export class Add extends Promise {
- }
-
- /**
-  * 
-  * The event class represents a promise of updating some object.
-  * 
-  */
- export class Update extends Promise {
- }
-
- /**
-  * 
-  * The event class represents a promise of deleting some object.
-  * 
-  */
- export class Delete extends Promise {
- }
-
- /**
-  * 
-  * The event class represents a promise of reading some object.
-  * 
-  */
- export class Get extends Promise {
- }
-
- /**
-  * 
-  * The event class represents a promise of querying objects.
-  * 
-  */
- export class Query extends Promise {
- }
-
- /**
-  * 
-  * The event class represents a promise of listening some object.
-  * 
-  */
- export class On extends Promise {
- }
-
- /**
-  * 
-  * The event class represents a promise of unlistening some object.
-  * 
-  */
- export class Off extends Promise {
- }
-
- /**
-  * 
   * The generic class represents a list events.
   * 
   */
@@ -76,115 +20,115 @@
    * 
    */
   constructor() {
-   this._Add = (data) => {return Add.resolve(data);};
-   this._Update = (data) => {return Update.resolve(data);};
-   this._Delete = (data) => {return Delete.resolve(data);};
-   this._Get = (data) => {return Get.resolve(data);};
-   this._Query = (data) => {return Query.resolve(data);};
-   this._On = (data) => {return On.resolve(data);};
-   this._Off = (data) => {return Off.resolve(data);};
+   this._added = (data) => {return Promise.resolve(data);};
+   this._updated = (data) => {return Promise.resolve(data);};
+   this._deleted = (data) => {return Promise.resolve(data);};
+   this._readed = (data) => {return Promise.resolve(data);};
+   this._queried = () => {return Promise.resolve();};
+   this._listened = () => {return Promise.resolve();};
+   this._unlistened = () => {return Promise.resolve();};
   }
 
   /**
-   * @returns {Add} Add
+   * @returns {Promise} The event represents a promise of adding some object.
    */
-  get Add() {
-   return this._Add;
+  get added() {
+   return this._added;
   }
 
   /**
-   * @param {Add} Add
+   * @param {Promise} added
    */
-  set Add(Add) {
-   this._Add = Add;
+  set added(added) {
+   this._added = added;
   }
 
   /**
-   * @returns {Update} Update
+   * @returns {Promise} The event represents a promise of updating some object.
    */
-  get Update() {
-   return this._Update;
+  get updated() {
+   return this._updated;
   }
 
   /**
-   * @param {Update} Update
+   * @param {Promise} updated
    */
-  set Update(Update) {
-   this._Update = Update;
+  set updated(updated) {
+   this._updated = updated;
   }
 
   /**
-   * @returns {Delete} Delete
+   * @returns {Promise} The event represents a promise of deleting some object.
    */
-  get Delete() {
-   return this._Delete;
+  get deleted() {
+   return this._deleted;
   }
 
   /**
-   * @param {Delete} Delete
+   * @param {Promise} deleted
    */
-  set Delete(Delete) {
-   this._Delete = Delete;
+  set deleted(deleted) {
+   this._deleted = deleted;
   }
 
   /**
-   * @returns {Get} Get
+   * @returns {Promise} The event represents a promise of reading some object.
    */
-  get Get() {
-   return this._Get;
+  get readed() {
+   return this._readed;
   }
 
   /**
-   * @param {Get} Get
+   * @param {Promise} readed
    */
-  set Get(Get) {
-   this._Get = Get;
+  set readed(readed) {
+   this._readed = readed;
   }
 
   /**
-   * @returns {Query} Query
+   * @returns {Promise} The event represents a promise of querying objects.
    */
-  get Query() {
-   return this._Query;
+  get queried() {
+   return this._queried;
   }
 
   /**
-   * @param {Query} Query
+   * @param {Promise} queried
    */
-  set Query(Query) {
-   this._Query = Query;
+  set queried(queried) {
+   this._queried = queried;
   }
 
   /**
-   * @returns {On} On
+   * @returns {Promise} The event represents a promise of listening some object.
    */
-  get On() {
-   return this._On;
+  get listened() {
+   return this._listened;
   }
 
   /**
-   * @param {On} On
+   * @param {Promise} listened
    */
-  set On(On) {
-   this._On = On;
+  set listened(listened) {
+   this._listened = listened;
   }
 
   /**
-   * @returns {Off} Off
+   * @returns {Promise} The event represents a promise of unlistening some object.
    */
-  get Off() {
-   return this._Off;
+  get unlistened() {
+   return this._unlistened;
   }
 
   /**
-   * @param {Off} Off
+   * @param {Promise} unlistened
    */
-  set Off(Off) {
-   this._Off = Off;
+  set unlistened(unlistened) {
+   this._unlistened = unlistened;
   }
 
   /**
-   * @returns {Molded} molded
+   * @returns {Molded} The molded object to a single dispatcher for all events.
    */
   get molded() {
    return this._molded;

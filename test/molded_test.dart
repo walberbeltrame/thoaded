@@ -83,9 +83,9 @@ class TestViewed extends Viewed<String> {
 class TestControlled extends Controlled<String> {
 
  TestControlled() : super(new TestMoldeled(), new TestViewed()) {
-  // make on event in modeled listener
+  // make read event in modeled listener
   this.modeled.readed("Hello, World!").then((text) {
-   // dispatch on event to viewed listener
+   // dispatch read event to viewed listener
    this.viewed.readed(text).then((text) {
     // print successfully 
     print("Print " + text + " successfully.");

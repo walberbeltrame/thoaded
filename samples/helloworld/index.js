@@ -1,5 +1,4 @@
-import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
- from "../../dist/molded.min.js";
+import {Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
 
  /**
   * 
@@ -10,10 +9,10 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
   constructor() {
    // run constructor in parent class
    super();
-   // make on event
-   this.On = (text) => {
-    // make on promise
-    return new On((resolve, reject) => {
+   // make read event
+   this.readed = (text) => {
+    // make a simple promise
+    return new Promise((resolve, reject) => {
      // verify text is valid
      if (text) {
       // resolve promise
@@ -36,10 +35,10 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
   constructor() {
    // run constructor in parent class
    super();
-   // make on event
-   this.On = (text) => {
-    // make on promise
-    return new On((resolve, reject) => {
+   // make read event
+   this.readed = (text) => {
+    // make a simple promise
+    return new Promise((resolve, reject) => {
      // verify text is valid
      if (text) {
       // make element from document
@@ -72,10 +71,10 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get, On, Off}
    let modeled = this.modeled;
    // get viewed listener
    let viewed = this.viewed;
-   // make on event in modeled listener
-   modeled.On("Hello, World!").then((text) =>{
-    // dispatch on event to viewed listener
-    viewed.On(text).then((text) => {
+   // dispatch read event in modeled listener
+   modeled.readed("Hello, World!").then((text) =>{
+    // dispatch read event to viewed listener
+    viewed.readed(text).then((text) => {
      // print successfully 
      console.log("Print " + text + " successfully.");
     });
