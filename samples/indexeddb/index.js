@@ -6,8 +6,7 @@
  * 
  */
 
-import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
- from "../../dist/molded.min.js";
+import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
 
  /**
   * 
@@ -145,78 +144,82 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
        reject(event);
       };
       // make add promise
-      this.Add = (data) => {return new Add((resolve, reject) => {
-      // make add transaction
-      this.transaction(this.store(data, "readwrite").add(data))
-       // request is successfully returned
-       .then((event) => {
-        // set identifier data
-        data.id = event.target.result;
-        // resolve promise
-        resolve(data); 
-       })
-       // request is incorrectly returned
-       .catch(() => {
-        // reject promise
-        reject(data);
-       })
-      });};
+      this.added = (data) => {return new Promise((resolve, reject) => {
+       // make add transaction
+       this.transaction(this.store(data, "readwrite").add(data))
+        // request is successfully returned
+        .then((event) => {
+         // set identifier data
+         data.id = event.target.result;
+         // resolve promise
+         resolve(data); 
+        })
+        // request is incorrectly returned
+        .catch(() => {
+         // reject promise
+         reject(data);
+        })
+       });
+      };
       // make update promise
-      this.Update = (data) => {return new Update((resolve, reject) => {
-      // make update transaction
-      this.transaction(this.store(data, "readwrite").put(data))
-       // request is successfully returned
-       .then(() => {
-        // resolve promise
-        resolve(data); 
-       })
-       // request is incorrectly returned
-       .catch(() => {
-       // reject promise
-        reject(data);
-       })
-      });};
+      this.updated = (data) => {return new Promise((resolve, reject) => {
+       // make update transaction
+       this.transaction(this.store(data, "readwrite").put(data))
+        // request is successfully returned
+        .then(() => {
+         // resolve promise
+         resolve(data); 
+        })
+        // request is incorrectly returned
+        .catch(() => {
+        // reject promise
+         reject(data);
+        })
+       });
+      };
       // make delete promise
-      this.Delete = (data) => {return new Delete((resolve, reject) => {
-      // make delete transaction
-      this.transaction(this.store(data, "readwrite").delete(data.id))
-       // request is successfully returned
-       .then(() => {
-        // resolve promise
-        resolve(data); 
-       })
-       // request is incorrectly returned
-       .catch(() => {
-        // reject promise
-        reject(data);
-       })
-      });};
-      // make get promise
-      this.Get = (data) => {return new Get((resolve, reject) => {
-      // make on transaction
-      this.transaction(this.store(data, "readonly").getAll())
-       // request is successfully returned
-       .then((event) => {
-        // make an array of notes
-        let notes = [];
-        // for all result
-        event.target.result.forEach(data => {
-         // make a note with data
-         let note = new Note(data._text);
-         // set note identifier 
-         note.id = data._id;
-         // push note in array
-         notes.push(note);
-        });
-        // resolve promise
-        resolve(notes); 
-       })
-       // request is incorrectly returned
-       .catch(() => {
-        // reject promise
-        reject();
-       })
-      });};
+      this.deleted = (data) => {return new Promise((resolve, reject) => {
+       // make delete transaction
+       this.transaction(this.store(data, "readwrite").delete(data.id))
+        // request is successfully returned
+        .then(() => {
+         // resolve promise
+         resolve(data); 
+        })
+        // request is incorrectly returned
+        .catch(() => {
+         // reject promise
+         reject(data);
+        })
+       });
+      };
+      // make read promise
+      this.readed = (data) => {return new Promise((resolve, reject) => {
+       // make read transaction
+       this.transaction(this.store(data, "readonly").getAll())
+        // request is successfully returned
+        .then((event) => {
+         // make an array of notes
+         let notes = [];
+         // for all result
+         event.target.result.forEach(data => {
+          // make a note with data
+          let note = new Note(data._text);
+          // set note identifier 
+          note.id = data._id;
+          // push note in array
+          notes.push(note);
+         });
+         // resolve promise
+         resolve(notes); 
+        })
+        // request is incorrectly returned
+        .catch(() => {
+         // reject promise
+         reject();
+        })
+       });
+      };
     } else {
      // reject promise
      reject();
@@ -311,9 +314,9 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
    // run constructor in parent class
    super();
    // make add event
-   this.Add = (note) => {
+   this.added = (note) => {
     // make add promise
-    return new Add((resolve, reject) => {
+    return new Promise((resolve, reject) => {
      // verify node is valid
      if (note && note.id) {
       // get page element of list
@@ -349,9 +352,9 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
     });
    };
    // make delete event
-   this.Delete = (note) => {
+   this.deleted = (note) => {
     // make delete promise
-    return new Delete((resolve, reject) => {
+    return new Promise((resolve, reject) => {
      // verify node is valid
      if (note && note.id) {
       // get page element of list
@@ -492,12 +495,12 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
    * @returns {Promise} load
    */
   get load() {
-   // dispatch event to get notes
-   return this.molded.Get(Note.prototype).then((notes) => {
+   // dispatch event to read notes
+   return this.molded.readed(Note.prototype).then((notes) => {
     // for all notes
     notes.forEach(note => {
      // dispatch event to add note
-     this.Add(note).then(() => {});
+     this.added(note).then(() => {});
     });
    });
   }
@@ -520,9 +523,9 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
      // cleanup of note input
      this.cleanup();
      // dispatch event to add note
-     this.molded.Add(note).then((note) => {
+     this.molded.added(note).then((note) => {
       // add note in list
-      this.Add(note).then(() => {
+      this.added(note).then(() => {
        // make a message of successfully
        this.message("Note added successfully.");
       });
@@ -555,7 +558,7 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
     // verify if note is valid
     if (note.text) {
      // dispatch event to update note
-     this.molded.Update(note).then((note) => {
+     this.molded.updated(note).then((note) => {
       // update data with text
       event.target.setAttribute("data-text", note.text);
       // make a message of successfully
@@ -591,9 +594,9 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
     // get note of event
     let note = this.get(event.target);
     // dispatch event to delete note
-    this.molded.Delete(note).then((note) => {
+    this.molded.deleted(note).then((note) => {
      // delete note in list
-     this.Delete(note).then(() => {
+     this.deleted(note).then(() => {
       // make a message of successfully
       this.message("Note deleted successfully.");
      });
@@ -664,24 +667,24 @@ import {Molded, Modeled, Viewed, Controlled, Add, Update, Delete, Get}
    // get viewed listener
    let viewed = this.viewed;
    // make add event in viewed listener
-   viewed.molded.Add = function(note) {
+   viewed.molded.added = function(note) {
     // dispatch add event to modeled listener
-    return modeled.Add(note);
+    return modeled.added(note);
    };
    // make update event in viewed listener
-   viewed.molded.Update = function(note) {
+   viewed.molded.updated = function(note) {
     // dispatch update event to modeled listener
-    return modeled.Update(note);
+    return modeled.updated(note);
    };
    // make delete event in viewed listener
-   viewed.molded.Delete = function(note) {
+   viewed.molded.deleted = function(note) {
     // dispatch delete event to modeled listener
-    return modeled.Delete(note);
+    return modeled.deleted(note);
    };
-   // make get event in viewed listener
-   viewed.molded.Get = function(note) {
-    // dispatch get event to modeled listener
-    return modeled.Get(note);
+   // make read event in viewed listener
+   viewed.molded.readed = function(note) {
+    // dispatch read event to modeled listener
+    return modeled.readed(note);
    };
   }
 
