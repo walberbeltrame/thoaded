@@ -23,7 +23,6 @@ node_modules
 .vscode/
 
 # Flutter/Dart/Pub related
-**/docs/
 **/doc/api/
 .dart_tool/
 .flutter-plugins
@@ -34,6 +33,9 @@ pubspec.lock
 build/
 dart/
 lib/
+
+# .NET related
+dotnet/
 
 # Android related
 **/android/**/gradle-wrapper.jar
