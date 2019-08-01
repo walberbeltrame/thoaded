@@ -193,9 +193,9 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
         })
        });
       };
-      // make read promise
-      this.readed = (data) => {return new Promise((resolve, reject) => {
-       // make read transaction
+      // make query promise
+      this.queried = (data) => {return new Promise((resolve, reject) => {
+       // make query transaction
        this.transaction(this.store(data, "readonly").getAll())
         // request is successfully returned
         .then((event) => {
@@ -495,8 +495,8 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
    * @returns {Promise} load
    */
   get load() {
-   // dispatch event to read notes
-   return this.molded.readed(Note.prototype).then((notes) => {
+   // dispatch event to query notes
+   return this.molded.queried(Note.prototype).then((notes) => {
     // for all notes
     notes.forEach(note => {
      // dispatch event to add note
@@ -681,10 +681,10 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
     // dispatch delete event to modeled listener
     return modeled.deleted(note);
    };
-   // make read event in viewed listener
-   viewed.molded.readed = function(note) {
-    // dispatch read event to modeled listener
-    return modeled.readed(note);
+   // make query event in viewed listener
+   viewed.molded.queried = function(note) {
+    // dispatch query event to modeled listener
+    return modeled.queried(note);
    };
   }
 
