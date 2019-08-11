@@ -82,8 +82,9 @@ class TestViewed extends Viewed<String> {
 
 class TestControlled extends Controlled<String> {
 
+ // run constructor in parent class
  TestControlled() : super(new TestMoldeled(), new TestViewed()) {
-  // make read event in modeled listener
+  // dispatch read event in modeled listener
   this.modeled.readed("Hello, World!").then((text) {
    // dispatch read event to viewed listener
    this.viewed.readed(text).then((text) {

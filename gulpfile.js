@@ -1,4 +1,5 @@
 const { task, src, dest, series, parallel } = require("gulp");
+const babel = require("gulp-babel");
 const eslint = require("gulp-eslint");
 const rename = require("gulp-rename");
 const terser = require("gulp-terser");
@@ -15,6 +16,22 @@ task("javascript", function() {
   .pipe(terser())
   .pipe(dest("dist/"));
 });
+
+/**
+ * 
+ * Task of build from source and generate babel javascript distribution file.
+ * 
+ */
+task("babel", function() {
+  return src("src/molded.js")
+   .pipe(eslint())
+   .pipe(babel({
+    presets: ["@babel/env"]
+   }))
+   .pipe(rename("molded.babel.min.js"))
+   .pipe(terser())
+   .pipe(dest("dist/"));
+ });
 
 /**
  * 
@@ -40,4 +57,4 @@ task("dart/files", function() {
  * Default task.
  * 
  */
-task("default", series("javascript", parallel("dart/lib", "dart/test", "dart/files")));
+task("default", series("javascript", "babel", parallel("dart/lib", "dart/test", "dart/files")));
