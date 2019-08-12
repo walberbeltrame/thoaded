@@ -130,15 +130,15 @@
   /**
    * @returns {Molded} The molded object to a single dispatcher for all events.
    */
-  get molded() {
-   return this._molded;
+  get moulded() {
+   return this._moulded;
   }
 
   /**
-   * @param {Molded} molded
+   * @param {Molded} moulded
    */
-  set molded(molded) {
-   this._molded = molded;
+  set moulded(moulded) {
+   this._moulded = moulded;
   }
 
  }

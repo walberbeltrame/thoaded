@@ -370,7 +370,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
     });
    };
    // molded object to a single dispatcher for all events in page
-   this.molded = new Molded();
+   this.moulded = new Molded();
    // get page element of button
    let button = this.button;
    // get page element of input
@@ -496,7 +496,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
    */
   get load() {
    // dispatch event to query notes
-   return this.molded.queried(Note.prototype).then((notes) => {
+   return this.moulded.queried(Note.prototype).then((notes) => {
     // for all notes
     notes.forEach(note => {
      // dispatch event to add note
@@ -523,7 +523,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
      // cleanup of note input
      this.cleanup();
      // dispatch event to add note
-     this.molded.added(note).then((note) => {
+     this.moulded.added(note).then((note) => {
       // add note in list
       this.added(note).then(() => {
        // make a message of successfully
@@ -558,7 +558,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
     // verify if note is valid
     if (note.text) {
      // dispatch event to update note
-     this.molded.updated(note).then((note) => {
+     this.moulded.updated(note).then((note) => {
       // update data with text
       event.target.setAttribute("data-text", note.text);
       // make a message of successfully
@@ -594,7 +594,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
     // get note of event
     let note = this.get(event.target);
     // dispatch event to delete note
-    this.molded.deleted(note).then((note) => {
+    this.moulded.deleted(note).then((note) => {
      // delete note in list
      this.deleted(note).then(() => {
       // make a message of successfully
@@ -667,22 +667,22 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
    // get viewed listener
    let viewed = this.viewed;
    // make add event in viewed listener
-   viewed.molded.added = function(note) {
+   viewed.moulded.added = function(note) {
     // dispatch add event to modeled listener
     return modeled.added(note);
    };
    // make update event in viewed listener
-   viewed.molded.updated = function(note) {
+   viewed.moulded.updated = function(note) {
     // dispatch update event to modeled listener
     return modeled.updated(note);
    };
    // make delete event in viewed listener
-   viewed.molded.deleted = function(note) {
+   viewed.moulded.deleted = function(note) {
     // dispatch delete event to modeled listener
     return modeled.deleted(note);
    };
    // make query event in viewed listener
-   viewed.molded.queried = function(note) {
+   viewed.moulded.queried = function(note) {
     // dispatch query event to modeled listener
     return modeled.queried(note);
    };

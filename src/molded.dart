@@ -8,7 +8,7 @@ import 'dart:async';
 /// The generic class represents a list events.
 abstract class Molded<T> {
 
- Molded<T> _molded;
+ Molded<T> _moulded;
 
  /// The event represents a future of adding some object.
  Future<T> added(T t);
@@ -32,12 +32,12 @@ abstract class Molded<T> {
  Future<void> unlistened([T t]);
 
  /// The [molded] object to a single dispatcher for all events.
- Molded<T> get molded {
-  return this._molded;
+ Molded<T> get moulded {
+  return this._moulded;
  }
 
- set molded(Molded<T> molded) {
-  this._molded = molded;
+ set moulded(Molded<T> moulded) {
+  this._moulded = moulded;
  }
 
 }
