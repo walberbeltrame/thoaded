@@ -93,9 +93,9 @@ namespace Molded.Tests
   public TestControlled() : base(new TestMoldeled(), new TestViewed())
   {
    // dispatch read event in modeled listener
-   this.Modeled.Readed("Hello, World!").ContinueWith((readed) => {
+   this.Modeled.Readed("Hello, World!").ContinueWith((modeled) => {
     // dispatch read event to viewed listener
-    this.Viewed.Readed(readed.Result).ContinueWith((viewed) => {
+    this.Viewed.Readed(modeled.Result).ContinueWith((viewed) => {
      // print successfully 
      Console.WriteLine("Print " + viewed.Result + " successfully.");
     });
