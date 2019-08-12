@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,11 +8,11 @@ namespace Molded
  /// The source for a library for simple and fast design pattern of model,
  /// view and controller in supported modern programming languages.
  /// <summary>
- [Author("Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)")]
 
- public abstract class Molded<T> {
+ public abstract class Molded<T>
+ {
 
-  public Molded<T> Molded { get; set; }
+  public Molded<T> Moulded { get; set; }
 
   /// <summary>
   /// The event represents a task of adding some object.
@@ -24,7 +23,7 @@ namespace Molded
   /// The event represents a task of updating some object.
   /// </summary>
   public abstract Task<T> Updated(T t);
-  
+
   /// <summary>
   /// The event represents a task of deleting some object.
   /// </summary>
@@ -33,22 +32,22 @@ namespace Molded
   /// <summary>
   /// The event represents a task of reading some object.
   /// </summary>
-  public abstract Future<T> Readed(T t);
+  public abstract Task<T> Readed(T t);
 
   /// <summary>
   /// The event represents a task of querying objects.
   /// </summary>
-  public abstract Task<IEnumerable<T>> Queried(T t = null);
+  public abstract Task<IEnumerable<T>> Queried(T t);
 
   /// <summary>
   /// The event represents a task of listening some object.
   /// </summary>
-  public abstract Task Listened(T t = null);
+  public abstract Task Listened(T t);
 
   /// <summary>
   /// The event represents a task of unlistening some object.
   /// </summary>
-  public abstract Task Unlistened(T t = null);
+  public abstract Task Unlistened(T t);
 
  }
 
@@ -62,6 +61,26 @@ namespace Molded
  /// </summary>
  public abstract class Viewed<T> : Molded<T> {}
 
- // TODO
+ /// <summary>
+ /// The generic class represents a control of events.
+ /// </summary>
+ public abstract class Controlled<T>
+ {
+  
+  public Modeled<T> Modeled { protected set; get; }
+  public Viewed<T> Viewed { protected set; get; }
+
+  /// <summary>
+  /// Controlled acts on both <paramref name="Modeled"/> and <paramref name="Viewed"/>.
+  /// It controls the data flow into model object and updates the view whenever changes.
+  /// It keeps view and model separate.
+  /// </summary>
+  public Controlled(Modeled<T> Modeled, Viewed<T> Viewed)
+  {
+   this.Modeled = Modeled;
+   this.Viewed = Viewed;
+  }
+
+ }
 
 }
