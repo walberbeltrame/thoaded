@@ -54,7 +54,33 @@ task("dart/files", function() {
 
 /**
  * 
+ * Tasks of build from source and generate dotnet distribution file.
+ * 
+ */
+task("dotnet/lib", function() {
+ return src(["src/Molded.cs","src/Molded.csproj"])
+  .pipe(dest("dotnet/Molded/"));
+});
+task("dotnet/obj", function() {
+ return src("obj/*.*")
+  .pipe(dest("dotnet/Molded/obj/"));
+ });
+task("dotnet/test", function() {
+ return src(["test/MoldedTest.cs","test/MoldedTest.csproj"])
+  .pipe(dest("dotnet/Molded.Tests/"));
+ });
+task("dotnet/test/obj", function() {
+ return src("test/obj/*.*")
+  .pipe(dest("dotnet/Molded.Tests/obj/"));
+ });
+task("dotnet/files", function() {
+ return src(["Molded.sln"])
+  .pipe(dest("dotnet/"));
+ });
+
+/**
+ * 
  * Default task.
  * 
  */
-task("default", series("javascript", "babel", parallel("dart/lib", "dart/test", "dart/files")));
+task("default", series("javascript", "babel", parallel("dart/lib", "dart/test", "dart/files"), parallel("dotnet/lib", "dotnet/obj", "dotnet/test", "dotnet/test/obj", "dotnet/files")));

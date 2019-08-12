@@ -10,6 +10,7 @@ namespace Molded
  /// view and controller in supported modern programming languages.
  /// <summary>
  [Author("Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)")]
+
  public abstract class Molded<T> {
 
   public Molded<T> Molded { get; set; }
@@ -50,5 +51,17 @@ namespace Molded
   public abstract Task Unlistened(T t = null);
 
  }
+
+ /// <summary>
+ /// A modeled class might have a single listener for all model events in source.
+ /// </summary>
+ public abstract class Modeled<T> : Molded<T> {}
+
+ /// <summary>
+ /// A viewed class might have a single listener for all view events in source.
+ /// </summary>
+ public abstract class Viewed<T> : Molded<T> {}
+
+ // TODO
 
 }
