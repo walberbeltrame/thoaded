@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "~/molded/dotnet/Molded.Tests/MoldedTest.csproj": {}
+  },
+  "projects": {
+    "~/molded/dotnet/Molded.Tests/MoldedTest.csproj": {
+      "version": "0.0.7",
+      "restore": {
+        "projectUniqueName": "~/molded/dotnet/Molded.Tests/MoldedTest.csproj",
+        "projectName": "MoldedTest",
+        "projectPath": "~/molded/dotnet/Molded.Tests/MoldedTest.csproj",
+        "packagesPath": "~/.nuget/packages/",
+        "outputPath": "~/molded/dotnet/Molded.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "~/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.0.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
