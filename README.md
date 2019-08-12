@@ -13,6 +13,11 @@ You should ensure that you add the router as a dependency in your dart project:
 dependencies:
  molded: "^0.0.7"
 ```
+### CSharp
+Use following command to install Molded package:
+```bash
+dotnet add package Molded
+```
 
 ## Documentation
 Molded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
@@ -124,6 +129,8 @@ The [IndexedDB](http://walberbeltrame.github.io/molded/samples/indexeddb/) is a 
 Molded supports all browsers that are [ES6-compliant](http://kangax.github.io/compat-table/es6/). 
 ### Dart
 Molded supports all environments that are [Dart 2](https://dart.dev/dart-2).
+### CSharp
+Molded supports all environments that are [Netstandard 2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).
 
 ## Changelog
 Detailed changes for each release are documented in the [release notes](https://github.com/walberbeltrame/molded/releases).
