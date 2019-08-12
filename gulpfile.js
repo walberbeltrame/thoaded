@@ -62,7 +62,7 @@ task("dotnet/lib", function() {
   .pipe(dest("dotnet/Molded/"));
 });
 task("dotnet/obj", function() {
- return src("obj/*.*")
+ return src("src/obj/*.*")
   .pipe(dest("dotnet/Molded/obj/"));
  });
 task("dotnet/test", function() {
