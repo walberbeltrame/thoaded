@@ -128,17 +128,17 @@
   }
 
   /**
-   * @returns {Molded} The molded object to a single dispatcher for all events.
+   * @returns {Molded} The molded object to a single dispatcher for all modifying events.
    */
-  get moulded() {
-   return this._moulded;
+  get modified() {
+   return this._modified;
   }
 
   /**
-   * @param {Molded} moulded
+   * @param {Molded} modified
    */
-  set moulded(moulded) {
-   this._moulded = moulded;
+  set modified(modified) {
+   this._modified = modified;
   }
 
  }

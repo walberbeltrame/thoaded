@@ -7,11 +7,15 @@ namespace Molded
  /// <summary>
  /// The source for a library for simple and fast design pattern of model,
  /// view and controller in supported modern programming languages.
+ /// Author: Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)
  /// <summary>
  public abstract class Molded<T>
  {
 
-  public Molded<T> Moulded { get; set; }
+  /// <summary>
+  /// The molded object to a single dispatcher for all modifying events.
+  /// </summary>
+  public Molded<T> Modified { get; set; }
 
   /// <summary>
   /// The event represents a task of adding some object.
