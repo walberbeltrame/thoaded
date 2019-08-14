@@ -37,6 +37,9 @@ lib/
 # .NET related
 dotnet/
 
+# Python related
+python/
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
