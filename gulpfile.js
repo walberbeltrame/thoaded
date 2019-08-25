@@ -72,7 +72,22 @@ task("dotnet/files", function() {
 
 /**
  * 
+ * Tasks of build from source and generate python distribution file.
+ * 
+ */
+task("python/lib", function() {
+ return src("src/molded.py")
+  .pipe(dest("lib/"))
+  .pipe(dest("python/lib/"));
+});
+task("python/test", function() {
+ return src("test/moldedtest.py")
+  .pipe(dest("python/"));
+});
+
+/**
+ * 
  * Default task.
  * 
  */
-task("default", series("javascript", "babel", parallel("dart/lib", "dart/test", "dart/files"), parallel("dotnet/lib", "dotnet/test", "dotnet/files")));
+task("default", series("javascript", "babel", parallel("dart/lib", "dart/test", "dart/files"), parallel("dotnet/lib", "dotnet/test", "dotnet/files"), parallel("python/lib", "python/test")));
