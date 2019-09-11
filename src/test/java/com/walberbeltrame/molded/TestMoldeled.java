@@ -1,0 +1,58 @@
+package com.walberbeltrame.molded;
+
+import java.util.LinkedList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+public class TestMoldeled extends Modeled<String> {
+
+ @Override
+ public Future<String> added(String text) {
+  return Executors.newSingleThreadExecutor().submit(() -> {
+   return text;
+  });
+ }
+
+ @Override
+ public Future<String> updated(String text) {
+  return Executors.newSingleThreadExecutor().submit(() -> {
+   return text;
+  });
+ }
+
+ @Override
+ public Future<String> deleted(String text) {
+  return Executors.newSingleThreadExecutor().submit(() -> {
+   return text;
+  });
+ }
+
+ @Override
+ public Future<String> readed(String text) {
+  return Executors.newSingleThreadExecutor().submit(() -> {
+   return text;
+  });
+ }
+
+ @Override
+ public Future<Iterable<String>> queried(String text) {
+  return Executors.newSingleThreadExecutor().submit(() -> {
+   return new LinkedList<String>();
+  });
+ }
+
+ @Override
+ public Future<String> listened(String text) {
+  return Executors.newSingleThreadExecutor().submit(() -> {
+   return text;
+  });
+ }
+
+ @Override
+ public Future<String> unlistened(String text) {
+  return Executors.newSingleThreadExecutor().submit(() -> {
+   return text;
+  });
+ }
+ 
+}

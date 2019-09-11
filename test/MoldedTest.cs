@@ -6,87 +6,87 @@ using Xunit;
 namespace Molded.Tests
 {
 
- public class TestMoldeled : Modeled<String>
+ public class TestMoldeled : Modeled<string>
  {
 
-  public override Task<string> Added(string t)
+  public override Task<string> Added(string text)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task<string> Updated(string t)
+  public override Task<string> Updated(string text)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task<string> Deleted(string t)
+  public override Task<string> Deleted(string text)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task Listened(string t)
+  public override Task Listened(string text)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task<IEnumerable<string>> Queried(string t = null)
+  public override Task<IEnumerable<string>> Queried(string text = null)
   {
    return Task.FromResult<IEnumerable<string>>(new string[0]);
   }
 
-  public override Task<string> Readed(string t = null)
+  public override Task<string> Readed(string text = null)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task Unlistened(string t = null)
+  public override Task Unlistened(string text = null)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
  }
 
- public class TestViewed : Viewed<String>
+ public class TestViewed : Viewed<string>
  {
 
-  public override Task<string> Added(string t)
+  public override Task<string> Added(string text)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task<string> Updated(string t)
+  public override Task<string> Updated(string text)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task<string> Deleted(string t)
+  public override Task<string> Deleted(string text)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task Listened(string t)
+  public override Task Listened(string text)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task<IEnumerable<string>> Queried(string t = null)
+  public override Task<IEnumerable<string>> Queried(string text = null)
   {
    return Task.FromResult<IEnumerable<string>>(new string[0]);
   }
 
-  public override Task<string> Readed(string t = null)
+  public override Task<string> Readed(string text = null)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
-  public override Task Unlistened(string t = null)
+  public override Task Unlistened(string text = null)
   {
-   return Task.FromResult<string>(t);
+   return Task.FromResult<string>(text);
   }
 
  }
 
- public class TestControlled : Controlled<String>
+ public class TestControlled : Controlled<string>
  {
 
   // run constructor in parent class
@@ -100,7 +100,6 @@ namespace Molded.Tests
      Console.WriteLine("Print " + viewed.Result + " successfully.");
     });
    });
-
   }
 
  }
@@ -113,16 +112,16 @@ namespace Molded.Tests
 
   public MoldedTest()
   {
-   Controlled = new TestControlled();
+   this.Controlled = new TestControlled();
   }
 
   [Fact]
   public void Test()
   {
-   Assert.Equal(Controlled.Modeled.Added(text).Result, Controlled.Viewed.Added(text).Result);
-   Assert.Equal(Controlled.Modeled.Updated(text).Result, Controlled.Viewed.Updated(text).Result);
-   Assert.Equal(Controlled.Modeled.Deleted(text).Result, Controlled.Viewed.Deleted(text).Result);
-   Assert.Equal(Controlled.Modeled.Readed(text).Result, Controlled.Viewed.Readed(text).Result);
+   Assert.Equal(this.Controlled.Modeled.Added(text).Result, this.Controlled.Viewed.Added(text).Result);
+   Assert.Equal(this.Controlled.Modeled.Updated(text).Result, this.Controlled.Viewed.Updated(text).Result);
+   Assert.Equal(this.Controlled.Modeled.Deleted(text).Result, this.Controlled.Viewed.Deleted(text).Result);
+   Assert.Equal(this.Controlled.Modeled.Readed(text).Result, this.Controlled.Viewed.Readed(text).Result);
   }
 
  }
