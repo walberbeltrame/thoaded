@@ -43,6 +43,10 @@
   "keywords": [
     "molded"
   ],
+  "files": [
+    "dist/molded.babel.min.js",
+    "dist/molded.min.js"
+  ],
   "author": {
     "name": "Walber Antonio Ramos Beltrame",
     "email": "walber.beltrame@gmail.com"
