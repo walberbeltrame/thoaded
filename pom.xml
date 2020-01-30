@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.walberbeltrame.molded</groupId>
-  <artifactId>molded</artifactId>
-  <version>0.0.7</version>
+	<groupId>com.walberbeltrame.molded</groupId>
+	<artifactId>molded</artifactId>
+	<version>0.0.7</version>
 
-  <name>Molded</name>
-  <url>https://walberbeltrame.github.io/molded/</url>
+	<name>Molded</name>
+	<url>https://walberbeltrame.github.io/molded/</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 		<junit.jupiter.version>5.5.2</junit.jupiter.version>
-  </properties>
+	</properties>
 
-  <dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
@@ -39,5 +39,22 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id><!-- Server config in settings.xml -->
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id><!-- Server config in settings.xml -->
+				<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			</repository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:git://github.com/walberbeltrame/molded.git</connection>
+		<developerConnection>scm:git:ssh://github.com:walberbeltrame/molded.git</developerConnection>
+		<url>https://github.com/walberbeltrame/molded/tree/master</url>
+	</scm>
 
 </project>

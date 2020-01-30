@@ -94,7 +94,11 @@ task("python/test", function() {
  return src("test/moldedtest.py")
   .pipe(dest("python/"));
 });
-task("python", parallel("python/lib", "python/test"));
+task("python/files", function() {
+  return src(["setup.py","README.md"])
+   .pipe(dest("python/"));
+ });
+task("python", parallel("python/lib", "python/test", "python/files"));
 
 /**
  * 

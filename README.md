@@ -18,6 +18,11 @@ Use following command to install Molded package:
 ```bash
 dotnet add package Molded
 ```
+### Python
+Use pip to install these utilities:
+```bash
+pip install molded
+```
 ### Java
 You should ensure that you add the router as a dependency in your maven project:
 ```xml
