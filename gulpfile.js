@@ -1,6 +1,7 @@
 const { task, src, dest, series, parallel } = require("gulp");
 const babel = require("gulp-babel");
 const eslint = require("gulp-eslint");
+const exec = require("child_process").exec;
 const rename = require("gulp-rename");
 const terser = require("gulp-terser");
 
@@ -51,6 +52,7 @@ task("dart/files", function() {
  return src(["README.md","CHANGELOG.md","LICENSE","pubspec.yaml"])
   .pipe(dest("dart/"));
 });
+task("dart", parallel("dart/lib", "dart/test", "dart/files"));
 
 /**
  * 
@@ -64,11 +66,19 @@ task("dotnet/lib", function() {
 task("dotnet/test", function() {
  return src(["test/MoldedTest.cs","test/MoldedTest.csproj"])
   .pipe(dest("dotnet/Molded.Tests/"));
- });
+});
 task("dotnet/files", function() {
  return src(["Molded.sln"])
   .pipe(dest("dotnet/"));
+});
+task("dotnet/build", function (cb) {
+ exec("dotnet build dotnet", function (err, stdout, stderr) {
+  console.log(stdout);
+  console.log(stderr);
+  cb(err);
  });
+});
+task("dotnet", series(parallel("dotnet/lib", "dotnet/test", "dotnet/files"), "dotnet/build"));
 
 /**
  * 
@@ -84,10 +94,11 @@ task("python/test", function() {
  return src("test/moldedtest.py")
   .pipe(dest("python/"));
 });
+task("python", parallel("python/lib", "python/test"));
 
 /**
  * 
  * Default task.
  * 
  */
-task("default", series("javascript", "babel", parallel("dart/lib", "dart/test", "dart/files"), parallel("dotnet/lib", "dotnet/test", "dotnet/files"), parallel("python/lib", "python/test")));
+task("default", series("javascript", "babel", "dart", "dotnet", "python"));

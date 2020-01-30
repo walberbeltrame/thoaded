@@ -25,17 +25,17 @@ class TestMoldeled extends Modeled<String> {
  }
 
  @override
- Future<Iterable<String>> queried([String text]) {
-  return Future.value([text]);
+ Future<Iterable<String>> queried([String texts]) {
+  return Future.value([texts]);
  }
 
  @override
- Future<void> listened([String text]) {
+ Future<void> listened([String texts]) {
   return Future.value();
  }
 
  @override
- Future<String> unlistened([String text]) {
+ Future<String> unlistened([String texts]) {
   return Future.value();
  }
 
@@ -64,17 +64,17 @@ class TestViewed extends Viewed<String> {
  }
 
  @override
- Future<Iterable<String>> queried([String text]) {
-  return Future.value([text]);
+ Future<Iterable<String>> queried([String texts]) {
+  return Future.value([texts]);
  }
 
  @override
- Future<void> listened([String text]) {
+ Future<void> listened([String texts]) {
   return Future.value();
  }
 
  @override
- Future<String> unlistened([String text]) {
+ Future<String> unlistened([String texts]) {
   return Future.value();
  }
 
@@ -104,6 +104,5 @@ void main() {
   expect(await controlled.modeled.updated(text), await controlled.viewed.updated(text));
   expect(await controlled.modeled.deleted(text), await controlled.viewed.deleted(text));
   expect(await controlled.modeled.readed(text), await controlled.viewed.readed(text));
-  expect(await controlled.modeled.queried(), await controlled.viewed.queried());
  });
 }

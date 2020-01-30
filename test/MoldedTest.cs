@@ -24,24 +24,24 @@ namespace Molded.Tests
    return Task.FromResult<string>(text);
   }
 
-  public override Task Listened(string text)
+  public override Task<string> Readed(string text)
   {
    return Task.FromResult<string>(text);
   }
 
-  public override Task<IEnumerable<string>> Queried(string text = null)
+  public override Task<IEnumerable<string>> Queried(params string[] texts)
   {
    return Task.FromResult<IEnumerable<string>>(new string[0]);
   }
-
-  public override Task<string> Readed(string text = null)
+ 
+  public override Task Listened(params string[] texts)
   {
-   return Task.FromResult<string>(text);
+   return Task.FromResult<string>(string.Empty);
   }
 
-  public override Task Unlistened(string text = null)
+  public override Task Unlistened(params string[] texts)
   {
-   return Task.FromResult<string>(text);
+   return Task.FromResult<string>(string.Empty);
   }
 
  }
@@ -64,24 +64,24 @@ namespace Molded.Tests
    return Task.FromResult<string>(text);
   }
 
-  public override Task Listened(string text)
+  public override Task<string> Readed(string text)
   {
    return Task.FromResult<string>(text);
   }
 
-  public override Task<IEnumerable<string>> Queried(string text = null)
+  public override Task<IEnumerable<string>> Queried(params string[] texts)
   {
    return Task.FromResult<IEnumerable<string>>(new string[0]);
   }
-
-  public override Task<string> Readed(string text = null)
+ 
+  public override Task Listened(params string[] texts)
   {
-   return Task.FromResult<string>(text);
+   return Task.FromResult<string>(string.Empty);
   }
 
-  public override Task Unlistened(string text = null)
+  public override Task Unlistened(params string[] texts)
   {
-   return Task.FromResult<string>(text);
+   return Task.FromResult<string>(string.Empty);
   }
 
  }

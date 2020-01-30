@@ -18,6 +18,20 @@ Use following command to install Molded package:
 ```bash
 dotnet add package Molded
 ```
+### Java
+You should ensure that you add the router as a dependency in your maven project:
+```xml
+<dependency>
+ <groupId>com.walberbeltrame.molded</groupId>
+ <artifactId>molded</artifactId>
+ <version>0.0.7</version>
+</dependency>
+```
+### Swift
+You should ensure that you add the router as a dependency in your swift project:
+```
+.package(url: "https://github.com/walberbeltrame/molded.git", from: "0.0.7")
+```
 
 ## Documentation
 Molded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
@@ -131,6 +145,10 @@ Molded supports all browsers that are [ES6-compliant](http://kangax.github.io/co
 Molded supports all environments that are [Dart 2](https://dart.dev/dart-2).
 ### CSharp
 Molded supports all environments that are [Netstandard 2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).
+### Java
+Molded supports all environments that are [Java 1.8](https://www.java.com/).
+### Swift
+Molded supports all environments that are [Swift 5](https://swift.org).
 
 ## Changelog
 Detailed changes for each release are documented in the [release notes](https://github.com/walberbeltrame/molded/releases).

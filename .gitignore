@@ -55,6 +55,10 @@ dotnet/
 # Python related
 python/
 
+# Swift related
+.build/
+Package.resolved
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle

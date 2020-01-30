@@ -69,20 +69,20 @@ public abstract class Molded<T> {
   * @param t T
   * @return The event represents a task of querying objects.
   */
- public abstract Future<Iterable<T>> queried(T t);
+ public abstract Future<Iterable<T>> queried(T[] t);
 
  /**
   * 
   * @param t T
   * @return The event represents a task of listening some object.
   */
- public abstract Future<T> listened(T t);
+ public abstract Future<T> listened(T[] t);
  
  /**
   * 
   * @param t T
   * @return The event represents a task of unlistening some object.
   */
- public abstract Future<T> unlistened(T t);
+ public abstract Future<T> unlistened(T[] t);
 
 }

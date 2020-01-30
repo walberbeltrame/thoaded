@@ -40,17 +40,17 @@ namespace Molded
   /// <summary>
   /// The event represents a task of querying objects.
   /// </summary>
-  public abstract Task<IEnumerable<T>> Queried(T t);
+  public abstract Task<IEnumerable<T>> Queried(params T[] t);
 
   /// <summary>
   /// The event represents a task of listening some object.
   /// </summary>
-  public abstract Task Listened(T t);
+  public abstract Task Listened(params T[] t);
 
   /// <summary>
   /// The event represents a task of unlistening some object.
   /// </summary>
-  public abstract Task Unlistened(T t);
+  public abstract Task Unlistened(params T[] t);
 
  }
 
@@ -70,8 +70,8 @@ namespace Molded
  public abstract class Controlled<T>
  {
   
-  public Modeled<T> Modeled { protected set; get; }
-  public Viewed<T> Viewed { protected set; get; }
+  public Modeled<T> Modeled { get; set; }
+  public Viewed<T> Viewed { get; set; }
 
   /// <summary>
   /// Controlled acts on both <paramref name="Modeled"/> and <paramref name="Viewed"/>.

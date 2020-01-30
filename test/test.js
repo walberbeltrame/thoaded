@@ -47,7 +47,4 @@ describe("Test molded", () => {
  it("Readed", async () => {
   assert.equal(await controlled.modeled.readed(text), await controlled.viewed.readed(text));
  });
- it("Queried", async () => {
-  assert.equal(await controlled.modeled.queried(), await controlled.viewed.queried());
- });
 });

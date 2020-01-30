@@ -35,23 +35,23 @@ public class TestViewed extends Viewed<String> {
  }
 
  @Override
- public Future<Iterable<String>> queried(String text) {
+ public Future<Iterable<String>> queried(String[] texts) {
   return Executors.newSingleThreadExecutor().submit(() -> {
    return new LinkedList<String>();
   });
  }
 
  @Override
- public Future<String> listened(String text) {
+ public Future<String> listened(String[] texts) {
   return Executors.newSingleThreadExecutor().submit(() -> {
-   return text;
+   return new String();
   });
  }
 
  @Override
- public Future<String> unlistened(String text) {
+ public Future<String> unlistened(String[] texts) {
   return Executors.newSingleThreadExecutor().submit(() -> {
-   return text;
+   return new String();
   });
  }
  
