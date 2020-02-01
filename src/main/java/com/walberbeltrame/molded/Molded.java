@@ -6,7 +6,7 @@
  * @author Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)
  * 
  */
-package com.walberbeltrame.molded;
+package com.walberbeltrame.tholded;
 
 import java.util.concurrent.Future;
 
@@ -16,15 +16,15 @@ import java.util.concurrent.Future;
  * 
  * @param <T>
  */
-public abstract class Molded<T> {
+public abstract class Tholded<T> {
 
- private Molded<T> modified;
+ private Tholded<T> modified;
 
  /**
   * 
-  * @return The molded object to a single dispatcher for all modifying events.
+  * @return The tholded object to a single dispatcher for all modifying events.
   */
- public Molded<T> getModified() {
+ public Tholded<T> getModified() {
   return this.modified;
  }
 
@@ -32,7 +32,7 @@ public abstract class Molded<T> {
   * 
   * @param modified
   */
- public void setModified(Molded<T> modified) {
+ public void setModified(Tholded<T> modified) {
   this.modified = modified;
  }
 

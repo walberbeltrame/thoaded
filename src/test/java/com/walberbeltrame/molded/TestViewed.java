@@ -1,4 +1,4 @@
-package com.walberbeltrame.molded;
+package com.walberbeltrame.tholded;
 
 import java.util.LinkedList;
 import java.util.concurrent.Executors;

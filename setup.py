@@ -6,11 +6,11 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 
-     name='molded',  
+     name='tholded',  
 
      version='0.0.7',
 
-     scripts=['molded.py'] ,
+     scripts=['tholded.py'] ,
 
      author="Walber Antonio Ramos Beltrame",
 
@@ -22,7 +22,7 @@ setuptools.setup(
 
      long_description_content_type="text/markdown",
 
-     url="https://walberbeltrame.github.io/molded/",
+     url="https://walberbeltrame.github.io/tholded/",
 
      packages=setuptools.find_packages(),
 

@@ -1,19 +1,19 @@
-const molded = require("../dist/molded.babel.min.js");
+const tholded = require("../dist/tholded.babel.min.js");
 const assert = require("assert");
 
-class TestMoldeled extends molded.Modeled {
+class TestMoldeled extends tholded.Modeled {
  constructor() {
   super();
  }
 }
 
-class TestViewed extends molded.Viewed {
+class TestViewed extends tholded.Viewed {
  constructor() {
   super();
  }
 }
 
-class TestControlled extends molded.Controlled {
+class TestControlled extends tholded.Controlled {
  constructor() {
   // run constructor in parent class
   super(new TestMoldeled(), new TestViewed());
@@ -32,7 +32,7 @@ class TestControlled extends molded.Controlled {
  }
 }
 
-describe("Test molded", () => {
+describe("Test tholded", () => {
  const text = "test";
  const controlled = new TestControlled();
  it("Added", async () => {

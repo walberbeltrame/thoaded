@@ -1,9 +1,9 @@
 import XCTest
-@testable import Molded
+@testable import Tholded
 
 extension String : Task {}
 
-extension Molded where T == String {
+extension Tholded where T == String {
 
     func added(_ text: String) -> Task {
         return text
@@ -35,7 +35,7 @@ extension Molded where T == String {
 
 }
 
-class TestModified : Modified, Molded {
+class TestModified : Modified, Tholded {
 
     typealias T = String
 
@@ -73,7 +73,7 @@ class TestControlled : Controlled {
 
 }
 
-final class MoldedTests: XCTestCase {
+final class TholdedTests: XCTestCase {
 
     let controlled = TestControlled()
     let text = "test"

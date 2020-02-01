@@ -11,9 +11,9 @@ const terser = require("gulp-terser");
  * 
  */
 task("javascript", function() {
- return src("src/molded.js")
+ return src("src/tholded.js")
   .pipe(eslint())
-  .pipe(rename("molded.min.js"))
+  .pipe(rename("tholded.min.js"))
   .pipe(terser())
   .pipe(dest("dist/"));
 });
@@ -24,12 +24,12 @@ task("javascript", function() {
  * 
  */
 task("babel", function() {
-  return src("src/molded.js")
+  return src("src/tholded.js")
    .pipe(eslint())
    .pipe(babel({
     presets: ["@babel/env"]
    }))
-   .pipe(rename("molded.babel.min.js"))
+   .pipe(rename("tholded.babel.min.js"))
    .pipe(terser())
    .pipe(dest("dist/"));
  });
@@ -40,12 +40,12 @@ task("babel", function() {
  * 
  */
 task("dart/lib", function() {
- return src("src/molded.dart")
+ return src("src/tholded.dart")
   .pipe(dest("lib/"))
   .pipe(dest("dart/lib/"));
 });
 task("dart/test", function() {
- return src("test/molded_test.dart")
+ return src("test/tholded_test.dart")
   .pipe(dest("dart/test/"));
 });
 task("dart/files", function() {
@@ -60,15 +60,15 @@ task("dart", parallel("dart/lib", "dart/test", "dart/files"));
  * 
  */
 task("dotnet/lib", function() {
- return src(["src/Molded.cs","src/Molded.csproj"])
-  .pipe(dest("dotnet/Molded/"));
+ return src(["src/Tholded.cs","src/Tholded.csproj"])
+  .pipe(dest("dotnet/Tholded/"));
 });
 task("dotnet/test", function() {
- return src(["test/MoldedTest.cs","test/MoldedTest.csproj"])
-  .pipe(dest("dotnet/Molded.Tests/"));
+ return src(["test/TholdedTest.cs","test/TholdedTest.csproj"])
+  .pipe(dest("dotnet/Tholded.Tests/"));
 });
 task("dotnet/files", function() {
- return src(["Molded.sln"])
+ return src(["Tholded.sln"])
   .pipe(dest("dotnet/"));
 });
 task("dotnet/build", function (cb) {
@@ -86,12 +86,12 @@ task("dotnet", series(parallel("dotnet/lib", "dotnet/test", "dotnet/files"), "do
  * 
  */
 task("python/lib", function() {
- return src("src/molded.py")
+ return src("src/tholded.py")
   .pipe(dest("lib/"))
   .pipe(dest("python/lib/"));
 });
 task("python/test", function() {
- return src("test/moldedtest.py")
+ return src("test/tholdedtest.py")
   .pipe(dest("python/"));
 });
 task("python/files", function() {

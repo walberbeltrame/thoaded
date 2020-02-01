@@ -1,10 +1,10 @@
-name: molded
+name: tholded
 version: 0.0.7
 description: >-
  The source for a library for simple and fast design pattern of model,
  view and controller in supported modern programming languages.
-homepage: https://walberbeltrame.github.io/molded/
-documentation: https://walberbeltrame.github.io/molded/dart/docs
+homepage: https://walberbeltrame.github.io/tholded/
+documentation: https://walberbeltrame.github.io/tholded/dart/docs
 dependencies:
  async: ^2.2.0
  flutter:

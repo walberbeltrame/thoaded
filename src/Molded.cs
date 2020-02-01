@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Molded
+namespace Tholded
 {
 
  /// <summary>
@@ -9,13 +9,13 @@ namespace Molded
  /// view and controller in supported modern programming languages.
  /// Author: Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)
  /// <summary>
- public abstract class Molded<T>
+ public abstract class Tholded<T>
  {
 
   /// <summary>
-  /// The molded object to a single dispatcher for all modifying events.
+  /// The tholded object to a single dispatcher for all modifying events.
   /// </summary>
-  public Molded<T> Modified { get; set; }
+  public Tholded<T> Modified { get; set; }
 
   /// <summary>
   /// The event represents a task of adding some object.
@@ -57,12 +57,12 @@ namespace Molded
  /// <summary>
  /// A modeled class might have a single listener for all model events in source.
  /// </summary>
- public abstract class Modeled<T> : Molded<T> {}
+ public abstract class Modeled<T> : Tholded<T> {}
 
  /// <summary>
  /// A viewed class might have a single listener for all view events in source.
  /// </summary>
- public abstract class Viewed<T> : Molded<T> {}
+ public abstract class Viewed<T> : Tholded<T> {}
 
  /// <summary>
  /// The generic class represents a control of events.

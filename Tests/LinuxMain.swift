@@ -1,7 +1,7 @@
 import XCTest
 
-import MoldedTests
+import TholdedTests
 
 var tests = [XCTestCaseEntry]()
-tests += MoldedTests.allTests()
+tests += TholdedTests.allTests()
 XCTMain(tests)

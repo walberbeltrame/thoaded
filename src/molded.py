@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Molded(ABC):
+class Tholded(ABC):
     """
     The source for a library for simple and fast design pattern of model,
     view and controller in supported modern programming languages.
@@ -12,7 +12,7 @@ class Molded(ABC):
 
     @property
     def modified(self):
-        """The molded object to a single dispatcher for all modifying events."""
+        """The tholded object to a single dispatcher for all modifying events."""
         return self._modified
 
     @modified.setter
@@ -54,11 +54,11 @@ class Molded(ABC):
         """The event represents a future of unlistening some object."""
         pass
 
-class Modeled(Molded):
+class Modeled(Tholded):
     """A modeled class might have a single listener for all model events in source."""
     pass
 
-class Viewed(Molded):
+class Viewed(Tholded):
     """A viewed class might have a single listener for all view events in source."""
     pass
 

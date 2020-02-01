@@ -1,4 +1,4 @@
-package com.walberbeltrame.molded;
+package com.walberbeltrame.tholded;
 
 /**
  * 
@@ -6,4 +6,4 @@ package com.walberbeltrame.molded;
  * 
  * @param <T>
  */
-public abstract class Viewed<T> extends Molded<T> {}
+public abstract class Viewed<T> extends Tholded<T> {}

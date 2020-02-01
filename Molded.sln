@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Molded", "Molded\Molded.csproj", "{FF573660-B224-4F47-9E81-2B0C22598E25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tholded", "Tholded\Tholded.csproj", "{FF573660-B224-4F47-9E81-2B0C22598E25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoldedTest", "Molded.Tests\MoldedTest.csproj", "{2F352CAD-D6F7-4EDE-BE85-93C42716244B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TholdedTest", "Tholded.Tests\TholdedTest.csproj", "{2F352CAD-D6F7-4EDE-BE85-93C42716244B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

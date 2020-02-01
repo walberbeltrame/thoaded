@@ -6,7 +6,7 @@
  * 
  */
 
-import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
+import {Tholded, Modeled, Viewed, Controlled} from "../../dist/tholded.min.js";
 
  /**
   * 
@@ -293,7 +293,7 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
    */
   constructor() {
    // run constructor in parent class
-   super("Molded", [new IndexedDBStore("Note", "_id")]);
+   super("Tholded", [new IndexedDBStore("Note", "_id")]);
   }
 
  }
@@ -369,8 +369,8 @@ import {Molded, Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
      } 
     });
    };
-   // molded object to a single dispatcher for all modifying events in page
-   this.modified = new Molded();
+   // tholded object to a single dispatcher for all modifying events in page
+   this.modified = new Tholded();
    // get page element of button
    let button = this.button;
    // get page element of input

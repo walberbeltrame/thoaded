@@ -10,7 +10,7 @@
     "test/dotnet": "dotnet test dotnet",
     "publish/dotnet": "dotnet pack dotnet -c Release",
     "build/python": "gulp python",
-    "test/python": "python -m unittest python/moldedtest.py",
+    "test/python": "python -m unittest python/tholdedtest.py",
     "publish/python": "python python/setup.py bdist_wheel",
     "build/java": "mvn clean compile package",
     "test/java": "mvn test",
@@ -31,21 +31,21 @@
     "mocha": "^6.2.2",
     "terser": "^3.17.0"
   },
-  "name": "@walberbeltrame/molded",
+  "name": "@walberbeltrame/tholded",
   "description": "The source for a library for simple and fast design pattern of model, view and controller in supported modern programming languages.",
   "version": "0.0.7",
   "main": "gulpfile.js",
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/walberbeltrame/molded.git"
+    "url": "git+https://github.com/walberbeltrame/tholded.git"
   },
   "keywords": [
-    "molded"
+    "tholded"
   ],
   "files": [
-    "dist/molded.babel.min.js",
-    "dist/molded.min.js"
+    "dist/tholded.babel.min.js",
+    "dist/tholded.min.js"
   ],
   "author": {
     "name": "Walber Antonio Ramos Beltrame",
@@ -53,7 +53,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/walberbeltrame/molded/issues"
+    "url": "https://github.com/walberbeltrame/tholded/issues"
   },
-  "homepage": "https://walberbeltrame.github.io/molded/"
+  "homepage": "https://walberbeltrame.github.io/tholded/"
 }

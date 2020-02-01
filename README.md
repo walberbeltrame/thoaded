@@ -1,45 +1,45 @@
-# Molded
+# Tholded
 The source for a library for simple and fast design pattern of model, view and controller in supported modern programming languages.
 
 ## Installation
 ### Javascript
-Install the Molded:
+Install the Tholded:
 ```bash
-npm i @walberbeltrame/molded --save
+npm i @walberbeltrame/tholded --save
 ```
 ### Dart
 You should ensure that you add the router as a dependency in your dart project:
 ```yaml
 dependencies:
- molded: "^0.0.7"
+ tholded: "^0.0.7"
 ```
 ### CSharp
-Use following command to install Molded package:
+Use following command to install Tholded package:
 ```bash
-dotnet add package Molded
+dotnet add package Tholded
 ```
 ### Python
 Use pip to install these utilities:
 ```bash
-pip install molded
+pip install tholded
 ```
 ### Java
 You should ensure that you add the router as a dependency in your maven project:
 ```xml
 <dependency>
- <groupId>com.walberbeltrame.molded</groupId>
- <artifactId>molded</artifactId>
+ <groupId>com.walberbeltrame.tholded</groupId>
+ <artifactId>tholded</artifactId>
  <version>0.0.7</version>
 </dependency>
 ```
 ### Swift
 You should ensure that you add the router as a dependency in your swift project:
 ```
-.package(url: "https://github.com/walberbeltrame/molded.git", from: "0.0.7")
+.package(url: "https://github.com/walberbeltrame/tholded.git", from: "0.0.7")
 ```
 
 ## Documentation
-Molded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Tholded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +53,7 @@ Molded applications are built by composing a series of simple components. By con
 </html>
 ```
 ```javascript
-import {Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
+import {Modeled, Viewed, Controlled} from "../../dist/tholded.min.js";
 
  /**
   * 
@@ -141,22 +141,22 @@ export const controlled = new SampleControlled();
 ```
 
 ## Samples
-The [IndexedDB](http://walberbeltrame.github.io/molded/samples/indexeddb/) is a good place to start learning how to use Molded.
+The [IndexedDB](http://walberbeltrame.github.io/tholded/samples/indexeddb/) is a good place to start learning how to use Tholded.
 
 ## Compatibility
 ### Javascript
-Molded supports all browsers that are [ES6-compliant](http://kangax.github.io/compat-table/es6/). 
+Tholded supports all browsers that are [ES6-compliant](http://kangax.github.io/compat-table/es6/). 
 ### Dart
-Molded supports all environments that are [Dart 2](https://dart.dev/dart-2).
+Tholded supports all environments that are [Dart 2](https://dart.dev/dart-2).
 ### CSharp
-Molded supports all environments that are [Netstandard 2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).
+Tholded supports all environments that are [Netstandard 2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).
 ### Java
-Molded supports all environments that are [Java 1.8](https://www.java.com/).
+Tholded supports all environments that are [Java 1.8](https://www.java.com/).
 ### Swift
-Molded supports all environments that are [Swift 5](https://swift.org).
+Tholded supports all environments that are [Swift 5](https://swift.org).
 
 ## Changelog
-Detailed changes for each release are documented in the [release notes](https://github.com/walberbeltrame/molded/releases).
+Detailed changes for each release are documented in the [release notes](https://github.com/walberbeltrame/tholded/releases).
 
 ## License
 Licensed under the [MIT](http://opensource.org/licenses/MIT) License.

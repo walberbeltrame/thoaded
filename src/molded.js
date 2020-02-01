@@ -12,7 +12,7 @@
   * The generic class represents a list events.
   * 
   */
- export class Molded {
+ export class Tholded {
 
   /**
    * 
@@ -128,14 +128,14 @@
   }
 
   /**
-   * @returns {Molded} The molded object to a single dispatcher for all modifying events.
+   * @returns {Tholded} The tholded object to a single dispatcher for all modifying events.
    */
   get modified() {
    return this._modified;
   }
 
   /**
-   * @param {Molded} modified
+   * @param {Tholded} modified
    */
   set modified(modified) {
    this._modified = modified;
@@ -148,7 +148,7 @@
   * A modeled class might have a single listener for all model events in source.
   * 
   */
- export class Modeled extends Molded {
+ export class Modeled extends Tholded {
  }
 
  /**
@@ -156,7 +156,7 @@
   * A viewed class might have a single listener for all view events in source.
   * 
   */
- export class Viewed extends Molded {
+ export class Viewed extends Tholded {
  }
 
  /**

@@ -1,4 +1,4 @@
-import {Modeled, Viewed, Controlled} from "../../dist/molded.min.js";
+import {Modeled, Viewed, Controlled} from "../../dist/tholded.min.js";
 
  /**
   * 

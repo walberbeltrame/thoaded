@@ -1,4 +1,4 @@
-from lib.molded import Modeled, Viewed, Controlled
+from lib.tholded import Modeled, Viewed, Controlled
 import unittest
 import asyncio
 
@@ -56,9 +56,9 @@ class TestControlled(Controlled):
         text = asyncio.run(self.viewed.readed(text))
         print("Print " + text + " successfully.")
 
-class MoldedTest(unittest.TestCase):
+class TholdedTest(unittest.TestCase):
 
-    def test_molded(self):
+    def test_tholded(self):
         text = "test"
         controlled = TestControlled()
         self.assertEqual(asyncio.run(controlled.modeled.added(text)), asyncio.run(controlled.viewed.added(text)))

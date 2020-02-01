@@ -1,15 +1,15 @@
-package com.walberbeltrame.molded;
+package com.walberbeltrame.tholded;
 
 import java.util.concurrent.ExecutionException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-public class MoldedTest {
+public class TholdedTest {
 
  private TestControlled controlled;
  private String text = "test";
 
- public MoldedTest()
+ public TholdedTest()
  {
   this.controlled = new TestControlled();
  }
