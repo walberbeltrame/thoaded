@@ -49,12 +49,6 @@ build/
 dart/
 lib/
 
-# .NET related
-dotnet/
-
-# Python related
-python/
-
 # Swift related
 .build/
 Package.resolved

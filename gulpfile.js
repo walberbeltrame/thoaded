@@ -82,27 +82,7 @@ task("dotnet", series(parallel("dotnet/lib", "dotnet/test", "dotnet/files"), "do
 
 /**
  * 
- * Tasks of build from source and generate python distribution file.
- * 
- */
-task("python/lib", function() {
- return src("src/tholded.py")
-  .pipe(dest("lib/"))
-  .pipe(dest("python/lib/"));
-});
-task("python/test", function() {
- return src("test/tholdedtest.py")
-  .pipe(dest("python/"));
-});
-task("python/files", function() {
-  return src(["setup.py","README.md"])
-   .pipe(dest("python/"));
- });
-task("python", parallel("python/lib", "python/test", "python/files"));
-
-/**
- * 
  * Default task.
  * 
  */
-task("default", series("javascript", "babel", "dart", "dotnet", "python"));
+task("default", series("javascript", "babel", "dart", "dotnet"));

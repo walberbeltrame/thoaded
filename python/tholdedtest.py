@@ -1,4 +1,4 @@
-from lib.tholded import Modeled, Viewed, Controlled
+from tholded import Modeled, Viewed, Controlled
 import unittest
 import asyncio
 

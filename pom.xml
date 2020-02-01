@@ -6,7 +6,7 @@
 
 	<groupId>com.walberbeltrame.tholded</groupId>
 	<artifactId>tholded</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 
 	<name>Tholded</name>
 	<url>https://walberbeltrame.github.io/tholded/</url>

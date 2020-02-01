@@ -2,8 +2,9 @@ from abc import ABC, abstractmethod
 
 class Tholded(ABC):
     """
-    The source for a library for simple and fast design pattern of model,
-    view and controller in supported modern programming languages.
+    The source for a library for simple and fast design pattern of time hold
+    that extends model, view and controller for asynchronous events in
+    supported modern programming languages.
 
     Author
     ----------

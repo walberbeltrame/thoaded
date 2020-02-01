@@ -31,9 +31,9 @@
     "mocha": "^6.2.2",
     "terser": "^3.17.0"
   },
-  "name": "@walberbeltrame/tholded",
-  "description": "The source for a library for simple and fast design pattern of model, view and controller in supported modern programming languages.",
-  "version": "0.0.7",
+  "name": "tholded",
+  "description": "The source for a library for simple and fast design pattern of time hold that extends model, view and controller for asynchronous events in supported modern programming languages.",
+  "version": "0.0.8",
   "main": "gulpfile.js",
   "dependencies": {},
   "repository": {
@@ -44,8 +44,8 @@
     "tholded"
   ],
   "files": [
-    "dist/tholded.babel.min.js",
-    "dist/tholded.min.js"
+    "tholded.babel.min.js",
+    "tholded.min.js"
   ],
   "author": {
     "name": "Walber Antonio Ramos Beltrame",

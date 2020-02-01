@@ -1,17 +1,17 @@
 # Tholded
-The source for a library for simple and fast design pattern of model, view and controller in supported modern programming languages.
+The source for a library for simple and fast design pattern of time hold that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 ### Javascript
 Install the Tholded:
 ```bash
-npm i @walberbeltrame/tholded --save
+npm i tholded --save
 ```
 ### Dart
 You should ensure that you add the router as a dependency in your dart project:
 ```yaml
 dependencies:
- tholded: "^0.0.7"
+ tholded: "^0.0.8"
 ```
 ### CSharp
 Use following command to install Tholded package:
@@ -29,13 +29,13 @@ You should ensure that you add the router as a dependency in your maven project:
 <dependency>
  <groupId>com.walberbeltrame.tholded</groupId>
  <artifactId>tholded</artifactId>
- <version>0.0.7</version>
+ <version>0.0.8</version>
 </dependency>
 ```
 ### Swift
 You should ensure that you add the router as a dependency in your swift project:
 ```
-.package(url: "https://github.com/walberbeltrame/tholded.git", from: "0.0.7")
+.package(url: "https://github.com/walberbeltrame/tholded.git", from: "0.0.8")
 ```
 
 ## Documentation
@@ -53,7 +53,7 @@ Tholded applications are built by composing a series of simple components. By co
 </html>
 ```
 ```javascript
-import {Modeled, Viewed, Controlled} from "../../dist/tholded.min.js";
+import {Modeled, Viewed, Controlled} from "<path>/tholded.min.js";
 
  /**
   * 

@@ -1,3 +1,7 @@
+## 0.0.8
+
+* Rename project for name exclusivity in dependency management and organize files by language type
+
 ## 0.0.7
 
 * Make a similar code for other modern languages ​​like CSharp, Python, Java, Swift and Dart
