@@ -24,4 +24,4 @@ pip install tholded
 ```
 
 ## Compatibility
-Tholded supports all environments that are [Python 3](www.python.org).
+Tholded supports all environments that are [Python 3](https://www.python.org/).
