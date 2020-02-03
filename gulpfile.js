@@ -36,26 +36,6 @@ task("babel", function() {
 
 /**
  * 
- * Tasks of build from source and generate dart distribution file.
- * 
- */
-task("dart/lib", function() {
- return src("src/tholded.dart")
-  .pipe(dest("lib/"))
-  .pipe(dest("dart/lib/"));
-});
-task("dart/test", function() {
- return src("test/tholded_test.dart")
-  .pipe(dest("dart/test/"));
-});
-task("dart/files", function() {
- return src(["README.md","CHANGELOG.md","LICENSE","pubspec.yaml"])
-  .pipe(dest("dart/"));
-});
-task("dart", parallel("dart/lib", "dart/test", "dart/files"));
-
-/**
- * 
  * Tasks of build from source and generate dotnet distribution file.
  * 
  */
@@ -85,4 +65,4 @@ task("dotnet", series(parallel("dotnet/lib", "dotnet/test", "dotnet/files"), "do
  * Default task.
  * 
  */
-task("default", series("javascript", "babel", "dart", "dotnet"));
+task("default", series("javascript", "babel", "dotnet"));
