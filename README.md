@@ -1,10 +1,16 @@
 <p>
- <img src="https://img.shields.io/github/v/tag/walberbeltrame/tholded.svg" />
- <img src="https://img.shields.io/github/languages/count/walberbeltrame/tholded.svg" />
+ <a href="https://github.com/walberbeltrame/molded/releases" alt="Release notes">
+  <img src="https://img.shields.io/github/v/tag/walberbeltrame/tholded.svg" />
+ </a>
+ <a href="https://github.com/walberbeltrame/tholded" alt="Language count">
+  <img src="https://img.shields.io/github/languages/count/walberbeltrame/tholded.svg" />
+ </a>
  <a href="https://travis-ci.org/walberbeltrame/tholded" alt="Tholded on TravisCI">
   <img src="https://travis-ci.org/walberbeltrame/tholded.svg" />
  </a>
- <img src="https://img.shields.io/github/license/walberbeltrame/tholded.svg" />
+ <a href="http://opensource.org/licenses/MIT" alt="MIT License">
+  <img src="https://img.shields.io/github/license/walberbeltrame/tholded.svg" />
+ </a>
 </p>
 
 # Tholded
