@@ -1,10 +1,9 @@
 <p>
- <a href="https://pypi.org/project/tholded/" alt="Tholded on PyPI">
-  <img src="https://img.shields.io/pypi/v/tholded.svg" />
- </a>
+ <img src="https://img.shields.io/pypi/v/tholded.svg" />
  <a href="https://travis-ci.org/walberbeltrame/tholded" alt="Tholded on TravisCI">
   <img src="https://travis-ci.org/walberbeltrame/tholded.svg" />
  </a>
+ <img src="https://img.shields.io/github/license/walberbeltrame/tholded.svg" />
 </p>
 
 # Tholded
@@ -22,7 +21,7 @@ Tholded applications are built by composing a series of simple components. By co
 from tholded import Modeled, Viewed, Controlled
 import asyncio
 
-class TestMoldeled(Modeled):
+class SampleMoldeled(Modeled):
 
     async def added(self, value):
         return value
@@ -45,7 +44,7 @@ class TestMoldeled(Modeled):
     async def unlistened(self, value=None):
         return value
 
-class TestViewed(Viewed):
+class SampleViewed(Viewed):
 
     async def added(self, value):
         return value
@@ -68,10 +67,10 @@ class TestViewed(Viewed):
     async def unlistened(self, value=None):
         return value
 
-class TestControlled(Controlled):
+class SampleControlled(Controlled):
 
     def __init__(self):
-        super().__init__(TestMoldeled(), TestViewed())
+        super().__init__(SampleMoldeled(), SampleViewed())
         text = asyncio.run(self.modeled.readed("Hello, World!"))
         text = asyncio.run(self.viewed.readed(text))
         print("Print " + text + " successfully.")
@@ -79,9 +78,3 @@ class TestControlled(Controlled):
 
 ## Compatibility
 Tholded supports all environments that are [Python 3](https://www.python.org/).
-
-## Changelog
-Detailed changes for each release are documented in the [release notes](https://github.com/walberbeltrame/tholded/releases).
-
-## License
-Licensed under the [MIT](http://opensource.org/licenses/MIT) License.

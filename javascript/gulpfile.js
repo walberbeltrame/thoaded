@@ -1,7 +1,6 @@
-const { task, src, dest, series, parallel } = require("gulp");
+const { task, src, dest, series } = require("gulp");
 const babel = require("gulp-babel");
 const eslint = require("gulp-eslint");
-const exec = require("child_process").exec;
 const rename = require("gulp-rename");
 const terser = require("gulp-terser");
 
@@ -15,7 +14,7 @@ task("javascript", function() {
   .pipe(eslint())
   .pipe(rename("tholded.min.js"))
   .pipe(terser())
-  .pipe(dest("dist/"));
+  .pipe(dest("/"));
 });
 
 /**
@@ -31,7 +30,7 @@ task("babel", function() {
    }))
    .pipe(rename("tholded.babel.min.js"))
    .pipe(terser())
-   .pipe(dest("dist/"));
+   .pipe(dest("/"));
  });
 
 /**
@@ -39,4 +38,4 @@ task("babel", function() {
  * Default task.
  * 
  */
-task("default", series("javascript", "babel", "dotnet"));
+task("default", series("javascript", "babel"));

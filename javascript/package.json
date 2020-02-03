@@ -1,21 +1,8 @@
 {
   "scripts": {
-    "build/javascript": "gulp javascript babel",
-    "test/javascript": "mocha",
-    "publish/javascript": "npm publish",
-    "build/dart": "gulp dart",
-    "test/dart": "flutter test dart/test",
-    "publish/dart": "flutter pub publish",
-    "build/dotnet": "gulp dotnet",
-    "test/dotnet": "dotnet test dotnet",
-    "publish/dotnet": "dotnet pack dotnet -c Release",
-    "build/python": "gulp python",
-    "test/python": "python -m unittest python/tholdedtest.py",
-    "publish/python": "python python/setup.py bdist_wheel",
-    "build/java": "mvn clean compile package",
-    "test/java": "mvn test",
-    "publish/java": "mvn deploy",
-    "test/swift": "swift test"
+    "build": "gulp",
+    "test": "mocha",
+    "publish": "npm publish"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
