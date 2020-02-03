@@ -78,7 +78,7 @@ class TestControlled(Controlled):
 ```
 
 ## Compatibility
-Tholded supports all environments that are [Python 2 and 3](https://www.python.org/).
+Tholded supports all environments that are [Python 3](https://www.python.org/).
 
 ## Changelog
 Detailed changes for each release are documented in the [release notes](https://github.com/walberbeltrame/tholded/releases).
