@@ -36,32 +36,6 @@ task("babel", function() {
 
 /**
  * 
- * Tasks of build from source and generate dotnet distribution file.
- * 
- */
-task("dotnet/lib", function() {
- return src(["src/Tholded.cs","src/Tholded.csproj"])
-  .pipe(dest("dotnet/Tholded/"));
-});
-task("dotnet/test", function() {
- return src(["test/TholdedTest.cs","test/TholdedTest.csproj"])
-  .pipe(dest("dotnet/Tholded.Tests/"));
-});
-task("dotnet/files", function() {
- return src(["Tholded.sln"])
-  .pipe(dest("dotnet/"));
-});
-task("dotnet/build", function (cb) {
- exec("dotnet build dotnet", function (err, stdout, stderr) {
-  console.log(stdout);
-  console.log(stderr);
-  cb(err);
- });
-});
-task("dotnet", series(parallel("dotnet/lib", "dotnet/test", "dotnet/files"), "dotnet/build"));
-
-/**
- * 
  * Default task.
  * 
  */
