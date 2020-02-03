@@ -44,10 +44,9 @@ buildNumber.properties
 .packages
 .pub-cache/
 .pub/
+.metadata
 pubspec.lock
 build/
-dart/
-lib/
 
 # Swift related
 .build/
