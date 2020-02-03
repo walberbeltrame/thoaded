@@ -40,7 +40,7 @@ task("babel", function() {
  * 
  */
 task("node", function() {
- return src("src/index.js")
+ return src("index.js")
   .pipe(dest("node_modules/tholded/"));
 });
 
