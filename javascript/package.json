@@ -1,8 +1,7 @@
 {
   "scripts": {
     "build": "gulp",
-    "test": "mocha",
-    "publish": "npm publish"
+    "test": "mocha"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -21,7 +20,7 @@
   "name": "tholded",
   "description": "The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.",
   "version": "0.0.8",
-  "main": "gulpfile.js",
+  "main": "index.js",
   "dependencies": {},
   "repository": {
     "type": "git",
@@ -31,6 +30,7 @@
     "tholded"
   ],
   "files": [
+    "index.js",
     "tholded.babel.min.js",
     "tholded.min.js"
   ],

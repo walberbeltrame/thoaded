@@ -14,7 +14,7 @@ task("javascript", function() {
   .pipe(eslint())
   .pipe(rename("tholded.min.js"))
   .pipe(terser())
-  .pipe(dest("/"));
+  .pipe(dest("./"));
 });
 
 /**
@@ -23,19 +23,30 @@ task("javascript", function() {
  * 
  */
 task("babel", function() {
-  return src("src/tholded.js")
-   .pipe(eslint())
-   .pipe(babel({
-    presets: ["@babel/env"]
-   }))
-   .pipe(rename("tholded.babel.min.js"))
-   .pipe(terser())
-   .pipe(dest("/"));
- });
+ return src("src/tholded.js")
+  .pipe(eslint())
+  .pipe(babel({
+   presets: ["@babel/env"]
+  }))
+  .pipe(rename("tholded.babel.min.js"))
+  .pipe(terser())
+  .pipe(dest("./"))
+  .pipe(dest("node_modules/tholded/"));
+});
+
+ /**
+ * 
+ * Task of node distribution file.
+ * 
+ */
+task("node", function() {
+ return src("src/index.js")
+  .pipe(dest("node_modules/tholded/"));
+});
 
 /**
  * 
  * Default task.
  * 
  */
-task("default", series("javascript", "babel"));
+task("default", series("javascript", "babel", "node"));

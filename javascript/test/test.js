@@ -1,4 +1,4 @@
-const tholded = require("../dist/tholded.babel.min.js");
+const tholded = require("tholded");
 const assert = require("assert");
 
 class TestMoldeled extends tholded.Modeled {

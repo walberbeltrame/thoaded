@@ -6,7 +6,7 @@
  * 
  */
 
-import {Tholded, Modeled, Viewed, Controlled} from "../../dist/tholded.min.js";
+import {Tholded, Modeled, Viewed, Controlled} from "../../tholded.min.js";
 
  /**
   * 
