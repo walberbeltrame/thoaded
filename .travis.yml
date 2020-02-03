@@ -2,8 +2,7 @@ matrix:
   include:
     # dotnet
     - language: csharp
-      solution:
-        - Tholded.sln
+      solution: Tholded.sln
       mono:
         - latest
       before_script:
