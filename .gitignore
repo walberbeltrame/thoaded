@@ -8,6 +8,8 @@
 .buildlog/
 .history
 .svn/
+bin/
+obj/
 
 # Javascript related
 package-lock.json
