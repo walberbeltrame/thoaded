@@ -10,9 +10,9 @@ const terser = require("gulp-terser");
  * 
  */
 task("javascript", function() {
- return src("src/tholded.js")
+ return src("src/thoulded.js")
   .pipe(eslint())
-  .pipe(rename("tholded.min.js"))
+  .pipe(rename("thoulded.min.js"))
   .pipe(terser())
   .pipe(dest("./"));
 });
@@ -23,15 +23,15 @@ task("javascript", function() {
  * 
  */
 task("babel", function() {
- return src("src/tholded.js")
+ return src("src/thoulded.js")
   .pipe(eslint())
   .pipe(babel({
    presets: ["@babel/env"]
   }))
-  .pipe(rename("tholded.babel.min.js"))
+  .pipe(rename("thoulded.babel.min.js"))
   .pipe(terser())
   .pipe(dest("./"))
-  .pipe(dest("node_modules/tholded/"));
+  .pipe(dest("node_modules/thoulded/"));
 });
 
  /**
@@ -41,7 +41,7 @@ task("babel", function() {
  */
 task("node", function() {
  return src("index.js")
-  .pipe(dest("node_modules/tholded/"));
+  .pipe(dest("node_modules/thoulded/"));
 });
 
 /**

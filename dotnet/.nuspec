@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <id>Tholded</id>
+        <id>Thoulded</id>
         <version>0.0.8</version>
         <authors>Walber Antonio Ramos Beltrame</authors>
         <description>The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</description>
-        <projectUrl>https://walberbeltrame.github.io/tholded/</projectUrl>
+        <projectUrl>https://walberbeltrame.github.io/thoulded/</projectUrl>
         <license type="expression">MIT</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <repository type="git" url="https://github.com/walberbeltrame/tholded.git" />
+        <repository type="git" url="https://github.com/walberbeltrame/thoulded.git" />
         <files>
          <file src="README.md" target="native" />
         </files>

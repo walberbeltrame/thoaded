@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Tholded
+namespace Thoulded
 {
 
  /// <summary>
@@ -9,13 +9,13 @@ namespace Tholded
  /// view and controller in supported modern programming languages.
  /// Author: Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)
  /// <summary>
- public abstract class Tholded<T>
+ public abstract class Thoulded<T>
  {
 
   /// <summary>
-  /// The tholded object to a single dispatcher for all modifying events.
+  /// The thoulded object to a single dispatcher for all modifying events.
   /// </summary>
-  public Tholded<T> Modified { get; set; }
+  public Thoulded<T> Modified { get; set; }
 
   /// <summary>
   /// The event represents a task of adding some object.
@@ -57,12 +57,12 @@ namespace Tholded
  /// <summary>
  /// A modeled class might have a single listener for all model events in source.
  /// </summary>
- public abstract class Modeled<T> : Tholded<T> {}
+ public abstract class Modeled<T> : Thoulded<T> {}
 
  /// <summary>
  /// A viewed class might have a single listener for all view events in source.
  /// </summary>
- public abstract class Viewed<T> : Tholded<T> {}
+ public abstract class Viewed<T> : Thoulded<T> {}
 
  /// <summary>
  /// The generic class represents a control of events.

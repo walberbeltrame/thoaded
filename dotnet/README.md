@@ -1,32 +1,32 @@
 <p>
- <a href="https://www.nuget.org/packages/Tholded/" alt="Tholded on Nuget">
-  <img src="https://img.shields.io/nuget/v/tholded.svg" />
+ <a href="https://www.nuget.org/packages/Thoulded/" alt="Thoulded on Nuget">
+  <img src="https://img.shields.io/nuget/v/thoulded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/tholded" alt="Tholded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/tholded.svg" />
+ <a href="https://travis-ci.org/walberbeltrame/thoulded" alt="Thoulded on TravisCI">
+  <img src="https://travis-ci.org/walberbeltrame/thoulded.svg" />
  </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
-  <img src="https://img.shields.io/github/license/walberbeltrame/tholded.svg" />
+  <img src="https://img.shields.io/github/license/walberbeltrame/thoulded.svg" />
  </a>
 </p>
 
-# Tholded
+# Thoulded
 The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
-Use following command to install Tholded package:
+Use following command to install Thoulded package:
 ```bash
-dotnet add package Tholded
+dotnet add package Thoulded
 ```
 
 ## Documentation
-Tholded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoulded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
 ```csharp
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Tholded.Samples
+namespace Thoulded.Samples
 {
 
  public class SampleMoldeled : Modeled<string>
@@ -131,4 +131,4 @@ namespace Tholded.Samples
 ```
 
 ## Compatibility
-Tholded supports all environments that are [Netstandard 2](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).
+Thoulded supports all environments that are [Netstandard 2](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).

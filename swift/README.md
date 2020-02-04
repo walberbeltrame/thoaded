@@ -1,30 +1,30 @@
 <p>
- <a href="https://github.com/walberbeltrame/tholded" alt="Tholded on Github">
-  <img src="https://img.shields.io/github/v/tag/walberbeltrame/tholded.svg" />
+ <a href="https://github.com/walberbeltrame/thoulded" alt="Thoulded on Github">
+  <img src="https://img.shields.io/github/v/tag/walberbeltrame/thoulded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/tholded" alt="Tholded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/tholded.svg" />
+ <a href="https://travis-ci.org/walberbeltrame/thoulded" alt="Thoulded on TravisCI">
+  <img src="https://travis-ci.org/walberbeltrame/thoulded.svg" />
  </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
-  <img src="https://img.shields.io/github/license/walberbeltrame/tholded.svg" />
+  <img src="https://img.shields.io/github/license/walberbeltrame/thoulded.svg" />
  </a>
 </p>
 
-# Tholded
+# Thoulded
 The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 You should ensure that you add the router as a dependency in your swift project:
 ```
-.package(url: "https://github.com/walberbeltrame/tholded.git", from: "0.0.8")
+.package(url: "https://github.com/walberbeltrame/thoulded.git", from: "0.0.8")
 ```
 
 ## Documentation
-Tholded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoulded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
 ```swift
 extension String : Task {}
 
-extension Tholded where T == String {
+extension Thoulded where T == String {
 
     func added(_ text: String) -> Task {
         return text
@@ -56,7 +56,7 @@ extension Tholded where T == String {
 
 }
 
-class SampleModified : Modified, Tholded {
+class SampleModified : Modified, Thoulded {
 
     typealias T = String
 
@@ -96,4 +96,4 @@ class SampleControlled : Controlled {
 ```
 
 ## Compatibility
-Tholded supports all environments that are [Swift 5](https://swift.org).
+Thoulded supports all environments that are [Swift 5](https://swift.org).

@@ -2,7 +2,7 @@ matrix:
   include:
     # dotnet
     - language: csharp
-      solution: ./dotnet/Tholded.sln
+      solution: ./dotnet/Thoulded.sln
       before_script:
         - cd dotnet
       script:
@@ -50,7 +50,7 @@ matrix:
       before_script:
         - cd python
       script:
-        - python -m unittest tholdedtest.py
+        - python -m unittest thouldedtest.py
     # swift
     - language: swift
       osx_image: xcode11

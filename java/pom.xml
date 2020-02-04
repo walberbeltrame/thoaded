@@ -4,12 +4,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.walberbeltrame.tholded</groupId>
-	<artifactId>tholded</artifactId>
+	<groupId>com.walberbeltrame.thoulded</groupId>
+	<artifactId>thoulded</artifactId>
 	<version>0.0.8</version>
 
-	<name>Tholded</name>
-	<url>https://walberbeltrame.github.io/tholded/</url>
+	<name>Thoulded</name>
+	<url>https://walberbeltrame.github.io/thoulded/</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -52,9 +52,9 @@
 	</distributionManagement>
 
 	<scm>
-		<connection>scm:git:git://github.com/walberbeltrame/tholded.git</connection>
-		<developerConnection>scm:git:ssh://github.com:walberbeltrame/tholded.git</developerConnection>
-		<url>https://github.com/walberbeltrame/tholded/tree/master</url>
+		<connection>scm:git:git://github.com/walberbeltrame/thoulded.git</connection>
+		<developerConnection>scm:git:ssh://github.com:walberbeltrame/thoulded.git</developerConnection>
+		<url>https://github.com/walberbeltrame/thoulded/tree/master</url>
 	</scm>
 
 </project>

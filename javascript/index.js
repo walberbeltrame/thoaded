@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require("./tholded.babel.min.js");
+module.exports = require("./thoulded.babel.min.js");

@@ -1,15 +1,15 @@
-package com.walberbeltrame.tholded;
+package com.walberbeltrame.thoulded;
 
 import java.util.concurrent.ExecutionException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-public class TholdedTest {
+public class ThouldedTest {
 
  private TestControlled controlled;
  private String text = "test";
 
- public TholdedTest()
+ public ThouldedTest()
  {
   this.controlled = new TestControlled();
  }

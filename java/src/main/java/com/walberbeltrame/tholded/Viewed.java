@@ -1,4 +1,4 @@
-package com.walberbeltrame.tholded;
+package com.walberbeltrame.thoulded;
 
 /**
  * 
@@ -6,4 +6,4 @@ package com.walberbeltrame.tholded;
  * 
  * @param <T>
  */
-public abstract class Viewed<T> extends Tholded<T> {}
+public abstract class Viewed<T> extends Thoulded<T> {}

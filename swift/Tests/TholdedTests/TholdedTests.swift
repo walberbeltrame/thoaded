@@ -1,9 +1,9 @@
 import XCTest
-@testable import Tholded
+@testable import Thoulded
 
 extension String : Task {}
 
-extension Tholded where T == String {
+extension Thoulded where T == String {
 
     func added(_ text: String) -> Task {
         return text
@@ -35,7 +35,7 @@ extension Tholded where T == String {
 
 }
 
-class TestModified : Modified, Tholded {
+class TestModified : Modified, Thoulded {
 
     typealias T = String
 
@@ -73,7 +73,7 @@ class TestControlled : Controlled {
 
 }
 
-final class TholdedTests: XCTestCase {
+final class ThouldedTests: XCTestCase {
 
     let controlled = TestControlled()
     let text = "test"

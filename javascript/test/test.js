@@ -1,19 +1,19 @@
-const tholded = require("tholded");
+const thoulded = require("thoulded");
 const assert = require("assert");
 
-class TestMoldeled extends tholded.Modeled {
+class TestMoldeled extends thoulded.Modeled {
  constructor() {
   super();
  }
 }
 
-class TestViewed extends tholded.Viewed {
+class TestViewed extends thoulded.Viewed {
  constructor() {
   super();
  }
 }
 
-class TestControlled extends tholded.Controlled {
+class TestControlled extends thoulded.Controlled {
  constructor() {
   // run constructor in parent class
   super(new TestMoldeled(), new TestViewed());
@@ -32,7 +32,7 @@ class TestControlled extends tholded.Controlled {
  }
 }
 
-describe("Test tholded", () => {
+describe("Test thoulded", () => {
  const text = "test";
  const controlled = new TestControlled();
  it("Added", async () => {

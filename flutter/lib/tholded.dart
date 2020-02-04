@@ -1,14 +1,14 @@
 /// The source for a library for simple and fast design pattern of model,
 /// view and controller in supported modern programming languages.
 /// [author] Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)
-library tholded;
+library thoulded;
 
 import 'dart:async';
 
 /// The generic class represents a list events.
-abstract class Tholded<T> {
+abstract class Thoulded<T> {
 
- Tholded<T> _modified;
+ Thoulded<T> _modified;
 
  /// The event represents a future of adding some object.
  Future<T> added(T t);
@@ -31,22 +31,22 @@ abstract class Tholded<T> {
  /// The event represents a future of unlistening some object.
  Future<void> unlistened([T t]);
 
- /// The tholded object to a single dispatcher for all modifying events.
- Tholded<T> get modified {
+ /// The thoulded object to a single dispatcher for all modifying events.
+ Thoulded<T> get modified {
   return this._modified;
  }
 
- set modified(Tholded<T> modified) {
+ set modified(Thoulded<T> modified) {
   this._modified = modified;
  }
 
 }
 
 /// A modeled class might have a single listener for all model events in source.
-abstract class Modeled<T> extends Tholded<T> {}
+abstract class Modeled<T> extends Thoulded<T> {}
 
 /// A viewed class might have a single listener for all view events in source.
-abstract class Viewed<T> extends Tholded<T> {}
+abstract class Viewed<T> extends Thoulded<T> {}
 
 /// The generic class represents a control of events.
 abstract class Controlled<T> {
