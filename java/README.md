@@ -19,7 +19,7 @@ You should ensure that you add the router as a dependency in your maven project:
 <dependency>
  <groupId>com.walberbeltrame.thoaded</groupId>
  <artifactId>thoaded</artifactId>
- <version>0.0.8</version>
+ <version>0.0.9</version>
 </dependency>
 ```
 

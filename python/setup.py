@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name="thoaded",  
-     version="0.0.8",
+     version="0.0.9",
      py_modules=["thoaded"],
      author="Walber Antonio Ramos Beltrame",
      author_email="walber.beltrame@gmail.com",
