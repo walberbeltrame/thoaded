@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Thoulded.Tests
+namespace Thoaded.Tests
 {
 
  public class TestMoldeled : Modeled<string>
@@ -104,13 +104,13 @@ namespace Thoulded.Tests
 
  }
 
- public class ThouldedTest
+ public class ThoadedTest
  {
 
   private readonly TestControlled Controlled;
   private readonly string text = "test";
 
-  public ThouldedTest()
+  public ThoadedTest()
   {
    this.Controlled = new TestControlled();
   }

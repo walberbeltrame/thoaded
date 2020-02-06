@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:thoulded/thoulded.dart';
+import 'package:thoaded/thoaded.dart';
 
 class TestMoldeled extends Modeled<String> {
 
@@ -97,7 +97,7 @@ class TestControlled extends Controlled<String> {
 }
 
 void main() {
- test("Test thoulded", () async {
+ test("Test thoaded", () async {
   final text = "test";
   final controlled = TestControlled();
   expect(await controlled.modeled.added(text), await controlled.viewed.added(text));

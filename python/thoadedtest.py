@@ -1,4 +1,4 @@
-from thoulded import Modeled, Viewed, Controlled
+from thoaded import Modeled, Viewed, Controlled
 import unittest
 import asyncio
 
@@ -56,9 +56,9 @@ class TestControlled(Controlled):
         text = asyncio.run(self.viewed.readed(text))
         print("Print " + text + " successfully.")
 
-class ThouldedTest(unittest.TestCase):
+class ThoadedTest(unittest.TestCase):
 
-    def test_thoulded(self):
+    def test_thoaded(self):
         text = "test"
         controlled = TestControlled()
         self.assertEqual(asyncio.run(controlled.modeled.added(text)), asyncio.run(controlled.viewed.added(text)))

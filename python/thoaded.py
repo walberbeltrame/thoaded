@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Thoulded(ABC):
+class Thoaded(ABC):
     """
     The source for a library for simple and fast design pattern of time hold
     that extends model, view and controller for asynchronous events in
@@ -13,7 +13,7 @@ class Thoulded(ABC):
 
     @property
     def modified(self):
-        """The thoulded object to a single dispatcher for all modifying events."""
+        """The thoaded object to a single dispatcher for all modifying events."""
         return self._modified
 
     @modified.setter
@@ -55,11 +55,11 @@ class Thoulded(ABC):
         """The event represents a future of unlistening some object."""
         pass
 
-class Modeled(Thoulded):
+class Modeled(Thoaded):
     """A modeled class might have a single listener for all model events in source."""
     pass
 
-class Viewed(Thoulded):
+class Viewed(Thoaded):
     """A viewed class might have a single listener for all view events in source."""
     pass
 

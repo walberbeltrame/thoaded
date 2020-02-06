@@ -6,7 +6,7 @@
  * 
  */
 
-import {Thoulded, Modeled, Viewed, Controlled} from "../../thoulded.min.js";
+import {Thoaded, Modeled, Viewed, Controlled} from "../../thoaded.min.js";
 
  /**
   * 
@@ -293,7 +293,7 @@ import {Thoulded, Modeled, Viewed, Controlled} from "../../thoulded.min.js";
    */
   constructor() {
    // run constructor in parent class
-   super("Thoulded", [new IndexedDBStore("Note", "_id")]);
+   super("Thoaded", [new IndexedDBStore("Note", "_id")]);
   }
 
  }
@@ -369,8 +369,8 @@ import {Thoulded, Modeled, Viewed, Controlled} from "../../thoulded.min.js";
      } 
     });
    };
-   // thoulded object to a single dispatcher for all modifying events in page
-   this.modified = new Thoulded();
+   // thoaded object to a single dispatcher for all modifying events in page
+   this.modified = new Thoaded();
    // get page element of button
    let button = this.button;
    // get page element of input

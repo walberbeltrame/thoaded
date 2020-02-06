@@ -1,26 +1,26 @@
 <p>
- <img src="https://img.shields.io/pypi/v/thoulded.svg" />
- <a href="https://travis-ci.org/walberbeltrame/thoulded" alt="Thoulded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoulded.svg" />
+ <img src="https://img.shields.io/pypi/v/thoaded.svg" />
+ <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
+  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
  </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
-  <img src="https://img.shields.io/github/license/walberbeltrame/thoulded.svg" />
+  <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
 </p>
 
-# Thoulded
+# Thoaded
 The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 Use pip to install these utilities:
 ```bash
-pip install thoulded
+pip install thoaded
 ```
 
 ## Documentation
-Thoulded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoulded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
 ```python
-from thoulded import Modeled, Viewed, Controlled
+from thoaded import Modeled, Viewed, Controlled
 import asyncio
 
 class SampleMoldeled(Modeled):
@@ -79,4 +79,4 @@ class SampleControlled(Controlled):
 ```
 
 ## Compatibility
-Thoulded supports all environments that are [Python 3](https://www.python.org/).
+Thoaded supports all environments that are [Python 3](https://www.python.org/).

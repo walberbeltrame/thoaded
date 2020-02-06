@@ -12,7 +12,7 @@
   * The generic class represents a list events.
   * 
   */
- export class Thoulded {
+ export class Thoaded {
 
   /**
    * 
@@ -128,14 +128,14 @@
   }
 
   /**
-   * @returns {Thoulded} The thoulded object to a single dispatcher for all modifying events.
+   * @returns {Thoaded} The thoaded object to a single dispatcher for all modifying events.
    */
   get modified() {
    return this._modified;
   }
 
   /**
-   * @param {Thoulded} modified
+   * @param {Thoaded} modified
    */
   set modified(modified) {
    this._modified = modified;
@@ -148,7 +148,7 @@
   * A modeled class might have a single listener for all model events in source.
   * 
   */
- export class Modeled extends Thoulded {
+ export class Modeled extends Thoaded {
  }
 
  /**
@@ -156,7 +156,7 @@
   * A viewed class might have a single listener for all view events in source.
   * 
   */
- export class Viewed extends Thoulded {
+ export class Viewed extends Thoaded {
  }
 
  /**

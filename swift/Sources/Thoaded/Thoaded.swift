@@ -9,7 +9,7 @@ protocol Task {}
 protocol Modified {}
 
 // The generic protocol represents a list events.
-protocol Thoulded {
+protocol Thoaded {
 
     associatedtype T
 
@@ -37,10 +37,10 @@ protocol Thoulded {
 }
 
 // A modeled protocol might have a single listener for all model events in source.
-protocol Modeled : Thoulded {}
+protocol Modeled : Thoaded {}
 
 // A viewed protocol might have a single listener for all view events in source.
-protocol Viewed : Thoulded {}
+protocol Viewed : Thoaded {}
 
 // The generic protocol represents a control of events.
 protocol Controlled {}

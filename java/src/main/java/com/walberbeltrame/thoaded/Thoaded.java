@@ -6,7 +6,7 @@
  * @author Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)
  * 
  */
-package com.walberbeltrame.thoulded;
+package com.walberbeltrame.thoaded;
 
 import java.util.concurrent.Future;
 
@@ -16,15 +16,15 @@ import java.util.concurrent.Future;
  * 
  * @param <T>
  */
-public abstract class Thoulded<T> {
+public abstract class Thoaded<T> {
 
- private Thoulded<T> modified;
+ private Thoaded<T> modified;
 
  /**
   * 
-  * @return The thoulded object to a single dispatcher for all modifying events.
+  * @return The thoaded object to a single dispatcher for all modifying events.
   */
- public Thoulded<T> getModified() {
+ public Thoaded<T> getModified() {
   return this.modified;
  }
 
@@ -32,7 +32,7 @@ public abstract class Thoulded<T> {
   * 
   * @param modified
   */
- public void setModified(Thoulded<T> modified) {
+ public void setModified(Thoaded<T> modified) {
   this.modified = modified;
  }
 

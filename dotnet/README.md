@@ -1,32 +1,32 @@
 <p>
- <a href="https://www.nuget.org/packages/Thoulded/" alt="Thoulded on Nuget">
-  <img src="https://img.shields.io/nuget/v/thoulded.svg" />
+ <a href="https://www.nuget.org/packages/Thoaded/" alt="Thoaded on Nuget">
+  <img src="https://img.shields.io/nuget/v/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoulded" alt="Thoulded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoulded.svg" />
+ <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
+  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
  </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
-  <img src="https://img.shields.io/github/license/walberbeltrame/thoulded.svg" />
+  <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
 </p>
 
-# Thoulded
+# Thoaded
 The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
-Use following command to install Thoulded package:
+Use following command to install Thoaded package:
 ```bash
-dotnet add package Thoulded
+dotnet add package Thoaded
 ```
 
 ## Documentation
-Thoulded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoulded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
 ```csharp
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Thoulded.Samples
+namespace Thoaded.Samples
 {
 
  public class SampleMoldeled : Modeled<string>
@@ -131,4 +131,4 @@ namespace Thoulded.Samples
 ```
 
 ## Compatibility
-Thoulded supports all environments that are [Netstandard 2](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).
+Thoaded supports all environments that are [Netstandard 2](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).
