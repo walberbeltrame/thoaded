@@ -1,29 +1,29 @@
 <p>
- <a href="https://pub.dev/packages/thoulded/" alt="Thoulded on Pub">
-  <img src="https://img.shields.io/pub/v/thoulded.svg" />
+ <a href="https://pub.dev/packages/thoaded/" alt="Thoaded on Pub">
+  <img src="https://img.shields.io/pub/v/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoulded" alt="Thoulded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoulded.svg" />
+ <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
+  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
  </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
-  <img src="https://img.shields.io/github/license/walberbeltrame/thoulded.svg" />
+  <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
 </p>
 
-# Thoulded
+# Thoaded
 The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 You should ensure that you add the router as a dependency in your project:
 ```yaml
 dependencies:
- thoulded: "^0.0.8"
+ thoaded: "^0.0.8"
 ```
 
 ## Documentation
-Thoulded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoaded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
 ```dart
-import 'package:thoulded/thoulded.dart';
+import 'package:thoaded/thoaded.dart';
 
 class SampleMoldeled extends Modeled<String> {
 
@@ -121,4 +121,4 @@ class SampleControlled extends Controlled<String> {
 ```
 
 ## Compatibility
-Thoulded supports all environments that are [Flutter](https://flutter.dev/).
+Thoaded supports all environments that are [Flutter](https://flutter.dev/).

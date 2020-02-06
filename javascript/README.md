@@ -1,26 +1,26 @@
 <p>
- <a href="https://www.npmjs.com/package/thoulded" alt="Thoulded on Npm">
-  <img src="https://img.shields.io/npm/v/thoulded.svg" />
+ <a href="https://www.npmjs.com/package/thoaded" alt="Thoaded on Npm">
+  <img src="https://img.shields.io/npm/v/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoulded" alt="Thoulded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoulded.svg" />
+ <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
+  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
  </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
-  <img src="https://img.shields.io/github/license/walberbeltrame/thoulded.svg" />
+  <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
 </p>
 
-# Thoulded
+# Thoaded
 The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
-Install the Thoulded:
+Install the Thoaded:
 ```bash
-npm i thoulded --save
+npm i thoaded --save
 ```
 
 ## Documentation
-Thoulded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoaded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,7 @@ Thoulded applications are built by composing a series of simple components. By c
 </html>
 ```
 ```javascript
-import {Modeled, Viewed, Controlled} from "<path>/thoulded.min.js";
+import {Modeled, Viewed, Controlled} from "<path>/thoaded.min.js";
 
  /**
   * 
@@ -122,7 +122,7 @@ export const controlled = new SampleControlled();
 ```
 
 ## Samples
-The [IndexedDB](http://walberbeltrame.github.io/thoulded/javascript/samples/indexeddb/) is a good place to start learning how to use Thoulded.
+The [IndexedDB](http://walberbeltrame.github.io/thoaded/javascript/samples/indexeddb/) is a good place to start learning how to use Thoaded.
 
 ## Compatibility
-Thoulded supports all environments that are [ECMAScript 6](https://ecma-international.org/). Additionally, also supported by build in [Babel](https://babeljs.io/).
+Thoaded supports all environments that are [ECMAScript 6](https://ecma-international.org/). Additionally, also supported by build in [Babel](https://babeljs.io/).

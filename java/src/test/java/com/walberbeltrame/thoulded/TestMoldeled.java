@@ -1,4 +1,4 @@
-package com.walberbeltrame.thoulded;
+package com.walberbeltrame.thoaded;
 
 import java.util.LinkedList;
 import java.util.concurrent.Executors;

@@ -1,34 +1,34 @@
 <p>
- <a href="https://search.maven.org/artifact/com.walberbeltrame/thoulded" alt="Thoulded on Maven Central">
-  <img src="https://img.shields.io/maven-central/v/com.walberbeltrame/thoulded.svg" />
+ <a href="https://search.maven.org/artifact/com.walberbeltrame/thoaded" alt="Thoaded on Maven Central">
+  <img src="https://img.shields.io/maven-central/v/com.walberbeltrame/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoulded" alt="Thoulded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoulded.svg" />
+ <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
+  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
  </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
-  <img src="https://img.shields.io/github/license/walberbeltrame/thoulded.svg" />
+  <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
 </p>
 
-# Thoulded
+# Thoaded
 The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 You should ensure that you add the router as a dependency in your maven project:
 ```xml
 <dependency>
- <groupId>com.walberbeltrame.thoulded</groupId>
- <artifactId>thoulded</artifactId>
+ <groupId>com.walberbeltrame.thoaded</groupId>
+ <artifactId>thoaded</artifactId>
  <version>0.0.8</version>
 </dependency>
 ```
 
 ## Documentation
-Thoulded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoaded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
 
 _SampleMoldeled.java_
 ```java
-import com.walberbeltrame.thoulded.Modeled;
+import com.walberbeltrame.thoaded.Modeled;
 import java.util.LinkedList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -88,7 +88,7 @@ public class SampleMoldeled extends Modeled<String> {
 ```
 _SampleViewed.java_
 ```java
-import com.walberbeltrame.thoulded.Viewed;
+import com.walberbeltrame.thoaded.Viewed;
 import java.util.LinkedList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -148,7 +148,7 @@ public class SampleViewed extends Viewed<String> {
 ```
 _SampleControlled.java_
 ```java
-import com.walberbeltrame.thoulded.Controlled;
+import com.walberbeltrame.thoaded.Controlled;
 import java.util.concurrent.ExecutionException;
 
 public class SampleControlled extends Controlled<String> {
@@ -171,4 +171,4 @@ public class SampleControlled extends Controlled<String> {
 ```
 
 ## Compatibility
-Thoulded supports all environments that are [Java 1.8](https://www.java.com/).
+Thoaded supports all environments that are [Java 1.8](https://www.java.com/).

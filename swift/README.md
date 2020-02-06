@@ -1,30 +1,30 @@
 <p>
- <a href="https://github.com/walberbeltrame/thoulded" alt="Thoulded on Github">
-  <img src="https://img.shields.io/github/v/tag/walberbeltrame/thoulded.svg" />
+ <a href="https://github.com/walberbeltrame/thoaded" alt="Thoaded on Github">
+  <img src="https://img.shields.io/github/v/tag/walberbeltrame/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoulded" alt="Thoulded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoulded.svg" />
+ <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
+  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
  </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
-  <img src="https://img.shields.io/github/license/walberbeltrame/thoulded.svg" />
+  <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
 </p>
 
-# Thoulded
+# Thoaded
 The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 You should ensure that you add the router as a dependency in your swift project:
 ```
-.package(url: "https://github.com/walberbeltrame/thoulded.git", from: "0.0.8")
+.package(url: "https://github.com/walberbeltrame/thoaded.git", from: "0.0.8")
 ```
 
 ## Documentation
-Thoulded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoaded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
 ```swift
 extension String : Task {}
 
-extension Thoulded where T == String {
+extension Thoaded where T == String {
 
     func added(_ text: String) -> Task {
         return text
@@ -56,7 +56,7 @@ extension Thoulded where T == String {
 
 }
 
-class SampleModified : Modified, Thoulded {
+class SampleModified : Modified, Thoaded {
 
     typealias T = String
 
@@ -96,4 +96,4 @@ class SampleControlled : Controlled {
 ```
 
 ## Compatibility
-Thoulded supports all environments that are [Swift 5](https://swift.org).
+Thoaded supports all environments that are [Swift 5](https://swift.org).

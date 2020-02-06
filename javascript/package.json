@@ -17,22 +17,22 @@
     "mocha": "^6.2.2",
     "terser": "^3.17.0"
   },
-  "name": "thoulded",
+  "name": "thoaded",
   "description": "The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.",
   "version": "0.0.8",
   "main": "index.js",
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/walberbeltrame/thoulded.git"
+    "url": "git+https://github.com/walberbeltrame/thoaded.git"
   },
   "keywords": [
-    "thoulded"
+    "thoaded"
   ],
   "files": [
     "index.js",
-    "thoulded.babel.min.js",
-    "thoulded.min.js"
+    "thoaded.babel.min.js",
+    "thoaded.min.js"
   ],
   "author": {
     "name": "Walber Antonio Ramos Beltrame",
@@ -40,7 +40,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/walberbeltrame/thoulded/issues"
+    "url": "https://github.com/walberbeltrame/thoaded/issues"
   },
-  "homepage": "https://walberbeltrame.github.io/thoulded/"
+  "homepage": "https://walberbeltrame.github.io/thoaded/"
 }

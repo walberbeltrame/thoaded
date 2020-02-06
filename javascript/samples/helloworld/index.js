@@ -1,4 +1,4 @@
-import {Modeled, Viewed, Controlled} from "../../thoulded.min.js";
+import {Modeled, Viewed, Controlled} from "../../thoaded.min.js";
 
  /**
   * 
