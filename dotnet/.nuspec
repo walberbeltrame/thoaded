@@ -3,6 +3,7 @@
     <metadata>
         <id>Thoulded</id>
         <version>0.0.8</version>
+        <icon>icon.png</icon>
         <authors>Walber Antonio Ramos Beltrame</authors>
         <description>The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</description>
         <projectUrl>https://walberbeltrame.github.io/thoulded/</projectUrl>
@@ -11,6 +12,7 @@
         <repository type="git" url="https://github.com/walberbeltrame/thoulded.git" />
         <files>
          <file src="README.md" target="native" />
+         <file src="icon.png" target="native" />
         </files>
     </metadata>
 </package>
