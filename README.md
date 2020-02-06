@@ -16,6 +16,9 @@
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
   <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
+ <a href="https://twitter.com/thoaded" alt="Thoaded on Twitter">
+  <img src="https://img.shields.io/twitter/follow/:thoaded?label=Follow" />
+ </a>
 </p>
 
 # Thoaded
