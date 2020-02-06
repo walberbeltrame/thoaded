@@ -20,7 +20,7 @@ You should ensure that you add the router as a dependency in your swift project:
 ```
 
 ## Documentation
-Thoaded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoulded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
 ```swift
 extension String : Task {}
 

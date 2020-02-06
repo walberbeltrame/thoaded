@@ -20,7 +20,7 @@ npm i thoaded --save
 ```
 
 ## Documentation
-Thoaded applications are built by composing a series of simple components. By convention, components are made up of extends classes.
+Thoulded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
 ```html
 <!DOCTYPE html>
 <html lang="en">
