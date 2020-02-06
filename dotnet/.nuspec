@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Thoaded</id>
-        <version>0.0.8</version>
+        <version>0.0.9</version>
         <icon>icon.png</icon>
         <authors>Walber Antonio Ramos Beltrame</authors>
         <description>The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</description>

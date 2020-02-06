@@ -16,7 +16,7 @@ The source for a library for simple and fast design pattern that extends model, 
 ## Installation
 You should ensure that you add the router as a dependency in your swift project:
 ```
-.package(url: "https://github.com/walberbeltrame/thoaded.git", from: "0.0.8")
+.package(url: "https://github.com/walberbeltrame/thoaded.git", from: "0.0.9")
 ```
 
 ## Documentation

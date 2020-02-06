@@ -1,5 +1,5 @@
 name: thoaded
-version: 0.0.8
+version: 0.0.9
 description: >-
  The source for a library for simple and fast design pattern of model,
  view and controller in supported modern programming languages.
