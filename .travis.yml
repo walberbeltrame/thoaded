@@ -3,7 +3,7 @@ matrix:
     # dotnet
     - language: csharp
       mono: none
-      dotnet: 2.1.502
+      dotnet: 2.2.402
       solution: ./dotnet/Thoaded.sln
       before_script:
         - cd dotnet
@@ -54,9 +54,10 @@ matrix:
       script:
         - python -m unittest thoadedtest.py
     # swift
-    - language: swift
-      osx_image: xcode11.3
-      before_script:
-        - cd swift
-      script:
-        - swift test
+    # swift builds are not available on the Linux environments
+    #- language: swift
+    #  osx_image: xcode11.3
+    #  before_script:
+    #    - cd swift
+    #  script:
+    #    - swift test
