@@ -171,4 +171,4 @@ public class SampleControlled extends Controlled<String> {
 ```
 
 ## Compatibility
-Thoaded supports all environments that are [Java 1.8](https://www.java.com/).
+Thoaded supports all environments that are [Java 8](https://www.java.com/).

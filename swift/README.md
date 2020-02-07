@@ -96,7 +96,7 @@ class SampleControlled : Controlled {
 Adapt codes to use with frameworks like [PromiseKit](https://github.com/mxcl/PromiseKit) or [Google Promise](https://github.com/google/promises).
 
 ## Linux
-Swift builds are not available on the Linux environments in current Travis. [Install Swift](https://swift.org/getting-started/) manually after downloading and run test with command.
+Swift builds are not available on the Linux environments for current Travis. [Install Swift](https://swift.org/getting-started/) manually after downloading and run test with command.
 ```bash
 swift test
 ```
