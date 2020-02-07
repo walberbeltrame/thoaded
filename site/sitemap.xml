@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+ <title>Thoaded</title>
+ <description>Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</description>
+ <link>https://thoaded.walberbeltrame.com/</link>
+</channel>
+</rss>

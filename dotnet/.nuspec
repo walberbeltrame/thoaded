@@ -5,8 +5,8 @@
         <version>0.0.9</version>
         <icon>icon.png</icon>
         <authors>Walber Antonio Ramos Beltrame</authors>
-        <description>The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</description>
-        <projectUrl>https://walberbeltrame.github.io/thoaded/</projectUrl>
+        <description>Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</description>
+        <projectUrl>https://thoaded.walberbeltrame.com/</projectUrl>
         <license type="expression">MIT</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <repository type="git" url="https://github.com/walberbeltrame/thoaded.git" />
