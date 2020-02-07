@@ -2,9 +2,6 @@
  <a href="https://github.com/walberbeltrame/thoaded" alt="Thoaded on Github">
   <img src="https://img.shields.io/github/v/tag/walberbeltrame/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
- </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
   <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
@@ -97,3 +94,9 @@ class SampleControlled : Controlled {
 
 ## Compatibility
 Thoaded supports all environments that are [Swift 5](https://swift.org).
+
+## Linux
+Swift builds are not available on the Linux environments in current Travis. [Install Swift](https://swift.org/getting-started/) manually after downloading and run test with command.
+```bash
+swift test
+```
