@@ -20,7 +20,7 @@ dotnet add package Thoaded
 ```
 
 ## Documentation
-Thoulded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
+Thoaded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
 ```csharp
 using System;
 using System.Collections.Generic;

@@ -21,7 +21,7 @@ dependencies:
 ```
 
 ## Documentation
-Thoulded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
+Thoaded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
 ```dart
 import 'package:thoaded/thoaded.dart';
 

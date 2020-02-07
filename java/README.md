@@ -24,7 +24,7 @@ You should ensure that you add the router as a dependency in your maven project:
 ```
 
 ## Documentation
-Thoulded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
+Thoaded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
 
 _SampleMoldeled.java_
 ```java

@@ -18,7 +18,7 @@ pip install thoaded
 ```
 
 ## Documentation
-Thoulded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
+Thoaded applications are created by composing a series of simple inheritances. By convention, this components extends Modify-based Asynchronous Pattern.
 ```python
 from thoaded import Modeled, Viewed, Controlled
 import asyncio
