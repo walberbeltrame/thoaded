@@ -1,6 +1,6 @@
 <p>
- <a href="https://search.maven.org/artifact/com.walberbeltrame/thoaded" alt="Thoaded on Maven Central">
-  <img src="https://img.shields.io/maven-central/v/com.walberbeltrame/thoaded.svg" />
+ <a href="https://search.maven.org/artifact/com.walberbeltrame.thoaded/thoaded" alt="Thoaded on Maven Central">
+  <img src="https://img.shields.io/maven-central/v/com.walberbeltrame.thoaded/thoaded.svg" />
  </a>
  <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
   <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />

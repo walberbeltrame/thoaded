@@ -39,9 +39,9 @@ task("html", () => {
  * 
  */
 task("files", function() {
-  return src(["robots.txt", "sitemap.xml", "../images/favicon.ico"])
-   .pipe(dest("public/"));
- });
+ return src(["robots.txt", "sitemap.xml", "../images/favicon.ico"])
+  .pipe(dest("public/"));
+});
 
 /**
  * 

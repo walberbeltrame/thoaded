@@ -4,7 +4,7 @@ description: >-
  The source for a library for simple and fast design pattern of model,
  view and controller in supported modern programming languages.
 homepage: https://thoaded.walberbeltrame.com/
-documentation: https://walberbeltrame.github.io/thoaded/dart/docs
+documentation: https://walberbeltrame.github.io/thoaded/flutter/
 dependencies:
  async: ^2.2.0
  flutter:
