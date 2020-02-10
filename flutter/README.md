@@ -17,7 +17,7 @@ Library for simple and fast design pattern that extends model, view and controll
 You should ensure that you add the router as a dependency in your project:
 ```yaml
 dependencies:
- thoaded: "^0.1.0"
+ thoaded: ^0.1.0
 ```
 
 ## Documentation
