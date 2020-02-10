@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "gulp",
-    "dotnet": "dotnet nuget pack -c:Release",
+    "dotnet": "dotnet pack -c:Release",
     "flutter": "flutter pub publish",
     "java": "mvn clean compile package",
     "javascript" : "npm publish",
