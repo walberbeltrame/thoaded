@@ -19,7 +19,7 @@
   },
   "name": "thoaded",
   "description": "Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "main": "index.js",
   "dependencies": {},
   "repository": {

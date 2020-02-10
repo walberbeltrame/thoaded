@@ -1,8 +1,8 @@
 name: thoaded
-version: 0.0.9
+version: 0.1.0
 description: >-
- The source for a library for simple and fast design pattern of model,
- view and controller in supported modern programming languages.
+ Library for simple and fast design pattern that extends model, view and controller
+ for asynchronous events in supported modern programming languages.
 homepage: https://thoaded.walberbeltrame.com/
 documentation: https://walberbeltrame.github.io/thoaded/flutter/
 dependencies:

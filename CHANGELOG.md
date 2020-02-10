@@ -1,3 +1,7 @@
+## 0.1.0
+
+* Fix description in documentation files
+
 ## 0.0.9
 
 * Rename project for name exclusivity in social networks and create site and update documents with new informations

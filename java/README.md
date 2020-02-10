@@ -11,7 +11,7 @@
 </p>
 
 # Thoaded
-The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
+Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 You should ensure that you add the router as a dependency in your maven project:
@@ -19,7 +19,7 @@ You should ensure that you add the router as a dependency in your maven project:
 <dependency>
  <groupId>com.walberbeltrame.thoaded</groupId>
  <artifactId>thoaded</artifactId>
- <version>0.0.9</version>
+ <version>0.1.0</version>
 </dependency>
 ```
 

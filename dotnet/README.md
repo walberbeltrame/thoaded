@@ -11,7 +11,7 @@
 </p>
 
 # Thoaded
-The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
+Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 Use following command to install Thoaded package:
@@ -25,6 +25,7 @@ Thoaded applications are created by composing a series of simple inheritances. B
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Thoaded;
 
 namespace Thoaded.Samples
 {

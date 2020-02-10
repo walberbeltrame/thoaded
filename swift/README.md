@@ -8,12 +8,12 @@
 </p>
 
 # Thoaded
-The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
+Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 You should ensure that you add the router as a dependency in your swift project:
 ```
-.package(url: "https://github.com/walberbeltrame/thoaded.git", from: "0.0.9")
+.package(url: "https://github.com/walberbeltrame/thoaded.git", from: "0.1.0")
 ```
 
 ## Documentation

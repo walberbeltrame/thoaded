@@ -9,7 +9,7 @@
 </p>
 
 # Thoaded
-The source for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
+Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 Use pip to install these utilities:
