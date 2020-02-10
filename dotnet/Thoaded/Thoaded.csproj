@@ -7,7 +7,7 @@
     <Description>Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</Description>
     <PackageIconUrl>https://thoaded.walberbeltrame.com/images/thoaded-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://thoaded.walberbeltrame.com</PackageProjectUrl>
-    <License type="expression">MIT</License>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/walberbeltrame/thoaded</RepositoryUrl>
   </PropertyGroup>
