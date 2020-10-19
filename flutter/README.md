@@ -2,9 +2,6 @@
  <a href="https://pub.dev/packages/thoaded/" alt="Thoaded on Pub">
   <img src="https://img.shields.io/pub/v/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
- </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
   <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
@@ -17,7 +14,7 @@ Library for simple and fast design pattern that extends model, view and controll
 You should ensure that you add the router as a dependency in your project:
 ```yaml
 dependencies:
- thoaded: ^0.1.0
+ thoaded: ^0.1.1
 ```
 
 ## Documentation

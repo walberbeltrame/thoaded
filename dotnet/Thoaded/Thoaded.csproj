@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionPrefix>0.1.1</VersionPrefix>
     <Authors>Walber Antonio Ramos Beltrame</Authors>
     <Description>Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</Description>
     <PackageIconUrl>https://thoaded.walberbeltrame.com/images/thoaded-64x64.png</PackageIconUrl>

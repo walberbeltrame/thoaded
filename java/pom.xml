@@ -6,7 +6,7 @@
 
 	<groupId>com.walberbeltrame.thoaded</groupId>
 	<artifactId>thoaded</artifactId>
-	<version>0.1.0</version>
+	<version>0.1.1</version>
 
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</description>

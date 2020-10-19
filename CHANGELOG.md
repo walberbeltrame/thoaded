@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Review examples and continuous deployment
+
 ## 0.1.0
 
 * Fix description in documentation files

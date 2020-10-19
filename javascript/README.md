@@ -2,9 +2,6 @@
  <a href="https://www.npmjs.com/package/thoaded" alt="Thoaded on Npm">
   <img src="https://img.shields.io/npm/v/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
- </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
   <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>

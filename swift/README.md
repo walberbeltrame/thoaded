@@ -13,7 +13,7 @@ Library for simple and fast design pattern that extends model, view and controll
 ## Installation
 You should ensure that you add the router as a dependency in your swift project:
 ```
-.package(url: "https://github.com/walberbeltrame/thoaded.git", from: "0.1.0")
+.package(url: "https://github.com/walberbeltrame/thoaded.git", from: "0.1.1")
 ```
 
 ## Documentation
@@ -94,12 +94,6 @@ class SampleControlled : Controlled {
 
 ## Asynchronous
 Adapt codes to use with frameworks like [PromiseKit](https://github.com/mxcl/PromiseKit) or [Google Promise](https://github.com/google/promises).
-
-## Linux
-Swift builds are not available on the Linux environments for current Travis. [Install Swift](https://swift.org/getting-started/) manually after downloading and run test with command.
-```bash
-swift test
-```
 
 ## Compatibility
 Thoaded supports all environments that are [Swift 5](https://swift.org).

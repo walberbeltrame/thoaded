@@ -10,9 +10,6 @@
  <a href="https://github.com/walberbeltrame/thoaded" alt="Language count">
   <img src="https://img.shields.io/github/languages/count/walberbeltrame/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
- </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
   <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>

@@ -2,9 +2,6 @@
  <a href="https://search.maven.org/artifact/com.walberbeltrame.thoaded/thoaded" alt="Thoaded on Maven Central">
   <img src="https://img.shields.io/maven-central/v/com.walberbeltrame.thoaded/thoaded.svg" />
  </a>
- <a href="https://travis-ci.org/walberbeltrame/thoaded" alt="Thoaded on TravisCI">
-  <img src="https://travis-ci.org/walberbeltrame/thoaded.svg" />
- </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
   <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
@@ -19,7 +16,7 @@ You should ensure that you add the router as a dependency in your maven project:
 <dependency>
  <groupId>com.walberbeltrame.thoaded</groupId>
  <artifactId>thoaded</artifactId>
- <version>0.1.0</version>
+ <version>0.1.1</version>
 </dependency>
 ```
 

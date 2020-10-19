@@ -1,5 +1,5 @@
 name: thoaded
-version: 0.1.0
+version: 0.1.1
 description: >-
  Library for simple and fast design pattern that extends model, view and controller
  for asynchronous events in supported modern programming languages.
