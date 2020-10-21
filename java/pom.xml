@@ -9,7 +9,7 @@
 	<version>0.1.1</version>
 
 	<name>${project.groupId}:${project.artifactId}</name>
-	<description>Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</description>
+	<description>The open source initiative for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.</description>
 	<url>https://thoaded.walberbeltrame.com/</url>
 
 	<licenses>

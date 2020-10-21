@@ -8,7 +8,7 @@
 </p>
 
 # Thoaded
-Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
+The open source initiative for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.
 
 ## Installation
 Use following command to install Thoaded package:

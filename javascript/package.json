@@ -18,7 +18,7 @@
     "terser": "^3.17.0"
   },
   "name": "thoaded",
-  "description": "Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.",
+  "description": "The open source initiative for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.",
   "version": "0.1.1",
   "main": "index.js",
   "dependencies": {},

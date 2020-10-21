@@ -9,7 +9,7 @@ setuptools.setup(
      py_modules=["thoaded"],
      author="Walber Antonio Ramos Beltrame",
      author_email="walber.beltrame@gmail.com",
-     description="Library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.",
+     description="The open source initiative for a library for simple and fast design pattern that extends model, view and controller for asynchronous events in supported modern programming languages.",
      long_description=long_description,
      long_description_content_type="text/markdown",
      url="https://thoaded.walberbeltrame.com/",
