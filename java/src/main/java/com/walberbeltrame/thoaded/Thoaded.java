@@ -39,49 +39,63 @@ public abstract class Thoaded<T> {
  /**
   * 
   * @param t T
-  * @return The event represents a task of adding some object.
+  * @return The event represents a future of adding some object.
   */
  public abstract Future<T> added(T t);
 
  /**
   * 
   * @param t T
-  * @return The event represents a task of updating some object.
+  * @return The event represents a future of updating some object.
   */
  public abstract Future<T> updated(T t);
 
  /**
   * 
   * @param t T
-  * @return The event represents a task of deleting some object.
+  * @return The event represents a future of deleting some object.
   */
  public abstract Future<T> deleted(T t);
 
  /**
   * 
   * @param t T
-  * @return The event represents a task of reading some object.
+  * @return The event represents a future of reading some object.
   */
  public abstract Future<T> readed(T t);
 
  /**
   * 
   * @param t T
-  * @return The event represents a task of querying objects.
+  * @return The event represents a future of working some object.
+  */
+  public abstract Future<T> worked(T t);
+
+  /**
+   * 
+   * @param t T
+   * @return The event represents a future of handling some object.
+   */
+  public abstract Future<T> handled(T t);
+
+ /**
+  * 
+  * @param t T
+  * @return The event represents a future of querying objects.
   */
  public abstract Future<Iterable<T>> queried(T[] t);
 
  /**
   * 
   * @param t T
-  * @return The event represents a task of listening some object.
+  * @return The event represents a future of listening some object.
   */
  public abstract Future<T> listened(T[] t);
  
  /**
   * 
   * @param t T
-  * @return The event represents a task of unlistening some object.
+  * @return The event represents a future of unlistening some object.
   */
  public abstract Future<T> unlistened(T[] t);
 

@@ -41,6 +41,16 @@ class Thoaded(ABC):
         pass
 
     @abstractmethod
+    async def worked(self, value):
+        """The event represents a future of working some object."""
+        pass
+
+    @abstractmethod
+    async def handled(self, value):
+        """The event represents a future of handling some object."""
+        pass
+
+    @abstractmethod
     async def queried(self, value=None):
         """The event represents a future of querying objects."""
         pass

@@ -24,6 +24,8 @@
    this._updated = (data) => {return Promise.resolve(data);};
    this._deleted = (data) => {return Promise.resolve(data);};
    this._readed = (data) => {return Promise.resolve(data);};
+   this._worked = (data) => {return Promise.resolve(data);};
+   this._handled = (data) => {return Promise.resolve(data);};
    this._queried = () => {return Promise.resolve();};
    this._listened = () => {return Promise.resolve();};
    this._unlistened = () => {return Promise.resolve();};
@@ -83,6 +85,34 @@
    */
   set readed(readed) {
    this._readed = readed;
+  }
+
+  /**
+   * @returns {Promise} The event represents a promise of working some object.
+   */
+  get worked() {
+   return this._worked;
+  }
+
+  /**
+   * @param {Promise} worked
+   */
+  set worked(worked) {
+   this._worked = worked;
+  }
+
+  /**
+   * @returns {Promise} The event represents a promise of handling some object.
+   */
+  get handled() {
+   return this._handled;
+  }
+
+  /**
+   * @param {Promise} handled
+   */
+  set handled(handled) {
+   this._handled = handled;
   }
 
   /**

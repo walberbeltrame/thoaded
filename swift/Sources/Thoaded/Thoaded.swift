@@ -25,6 +25,12 @@ protocol Thoaded {
     // The event represents a task of reading some object.
     func readed(_ t: T) -> Task
 
+    // The event represents a task of working some object.
+    func worked(_ t: T) -> Task
+
+    // The event represents a task of handling some object.
+    func handled(_ t: T) -> Task
+
     // The event represents a task of querying objects.
     func queried(_ t: T...) -> [Task]
 

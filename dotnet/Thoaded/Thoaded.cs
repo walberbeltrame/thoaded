@@ -38,6 +38,16 @@ namespace Thoaded
   public abstract Task<T> Readed(T t);
 
   /// <summary>
+  /// The event represents a task of working some object.
+  /// </summary>
+  public abstract Task<T> Worked(T t);
+
+  /// <summary>
+  /// The event represents a task of handling some object.
+  /// </summary>
+  public abstract Task<T> Handled(T t);
+
+  /// <summary>
   /// The event represents a task of querying objects.
   /// </summary>
   public abstract Task<IEnumerable<T>> Queried(params T[] t);

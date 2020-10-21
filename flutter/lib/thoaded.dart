@@ -21,6 +21,12 @@ abstract class Thoaded<T> {
   /// The event represents a future of reading some object.
   Future<T> readed(T t);
 
+  /// The event represents a future of working some object.
+  Future<T> worked(T t);
+
+  /// The event represents a future of handling some object.
+  Future<T> handled(T t);
+
   /// The event represents a future of querying objects.
   Future<Iterable<T>> queried([T t]);
 
