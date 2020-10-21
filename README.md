@@ -1,6 +1,6 @@
 <p align="center">
  <a href="https://thoaded.walberbeltrame.com/" alt="Site">
-  <img src="https://raw.githubusercontent.com/walberbeltrame/thoaded/master/images/thoaded-circle-path.svg?sanitize=true" height="128" />
+  <img src="https://raw.githubusercontent.com/walberbeltrame/thoaded/master/images/circle.svg?sanitize=true" height="128" />
  </a>
 </p>
 <p>
