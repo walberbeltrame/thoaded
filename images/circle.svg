@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="256"
+   viewBox="0 0 256 256"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="circle.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="7"
+     inkscape:cy="53"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="false"
+     inkscape:window-width="1294"
+     inkscape:window-height="704"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1,-795.36218)">
+    <g
+       id="g829">
+      <rect
+         ry="128"
+         style="fill:#009688;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.61160368px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="rect3336-3"
+         width="256"
+         height="256"
+         x="1"
+         y="795.36218"
+         rx="128" />
+      <g
+         id="g828"
+         transform="translate(-3.8146973e-6,-2.6171874e-6)">
+        <g
+           id="text4233"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           aria-label="H">
+          <path
+             inkscape:connector-curvature="0"
+             id="path817"
+             d="m 81.089847,891.64638 c 9.190538,0 18.381075,0 27.571613,0 0,13.5829 0,27.1658 0,40.7487 13.55903,0 27.11806,0 40.67709,0 0,-13.5829 0,-27.1658 0,-40.7487 9.19054,0 18.38107,0 27.57161,0 0,35.64019 0,71.28039 0,106.92058 -9.19054,0 -18.38107,0 -27.57161,0 0,-15.11068 0,-30.22136 0,-45.33204 -13.55903,0 -27.11806,0 -40.67709,0 0,15.11068 0,30.22136 0,45.33204 -9.190538,0 -18.381075,0 -27.571613,0 0,-35.64019 0,-71.28039 0,-106.92058 z"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:146.66667175px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff" />
+        </g>
+        <path
+           inkscape:connector-curvature="0"
+           id="rect856"
+           d="m 44.000004,848.15741 c 56.666666,0 113.333326,0 169.999996,0 0,10 0,20 0,30 -56.66667,0 -113.33333,0 -169.999996,0 0,-10 0,-20 0,-30 z"
+           style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:17.26858711;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+    </g>
+  </g>
+</svg>
