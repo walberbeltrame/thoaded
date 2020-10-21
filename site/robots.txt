@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /images
-Disallow: /lib
-Disallow: /__/*
-Sitemap: https://thoaded.walberbeltrame.com/sitemap.xml
