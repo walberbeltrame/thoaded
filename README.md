@@ -9,7 +9,10 @@
  </a>
  <a href="https://github.com/walberbeltrame/thoaded" alt="Language count">
   <img src="https://img.shields.io/github/languages/count/walberbeltrame/thoaded.svg" />
- </a> 
+ </a>
+ <a href="http://commitizen.github.io/cz-cli/" alt="Commitizen friendly">
+  <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" />
+ </a>
  <a href="http://opensource.org/licenses/MIT" alt="MIT License">
   <img src="https://img.shields.io/github/license/walberbeltrame/thoaded.svg" />
  </a>
