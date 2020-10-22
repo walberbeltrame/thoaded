@@ -2,10 +2,10 @@ const thoaded = require("thoaded");
 
 /**
  * 
- * An simple class to test modify-based asynchronous events.
+ * An example class to demonstrate modify-based asynchronous events.
  * 
  */
-class Tested extends thoaded.Thoaded {
+class Exampled extends thoaded.Thoaded {
 
  /**
   * 
@@ -77,7 +77,7 @@ class Tested extends thoaded.Thoaded {
  * In this example, it’s just a symbolic extension.
  * 
  */
-class TestMoldeled extends Tested {
+class ExampleMoldeled extends Exampled {
  constructor() {
   super();
  }
@@ -89,7 +89,7 @@ class TestMoldeled extends Tested {
  * In this example, it’s just a symbolic extension.
  * 
  */
-class TestViewed extends Tested {
+class ExampleViewed extends Exampled {
  constructor() {
   super();
  }
@@ -100,7 +100,7 @@ class TestViewed extends Tested {
  * A final controlled class for acts on both modeled and viewed.
  * 
  */
-class TestControlled extends thoaded.Controlled {
+class ExampleControlled extends thoaded.Controlled {
 
  /**
  * 
@@ -109,88 +109,35 @@ class TestControlled extends thoaded.Controlled {
  */
  constructor() {
   // run constructor in parent class
-  super(new TestMoldeled(), new TestViewed());
+  super(new ExampleMoldeled(), new ExampleViewed());
   // get modeled listener
   let modeled = this.modeled;
   // get viewed listener
   let viewed = this.viewed;
-  // make add event in modeled listener
-  modeled.modified.added = (data) => {
-   // dispatch add event to viewed listener
-   return viewed.added(data);
-  };
-  // make update event in modeled listener
-  modeled.modified.updated = (data) => {
-   // dispatch update event to viewed listener
-   return viewed.updated(data);
-  };
-  // make delete event in modeled listener
-  modeled.modified.deleted = (data) => {
-   // dispatch delete event to viewed listener
-   return viewed.deleted(data);
-  };
-  // make read event in modeled listener
-  modeled.modified.readed = (data) => {
-   // dispatch read event to viewed listener
-   return viewed.readed(data);
-  };
   // make work event in modeled listener
   modeled.modified.worked = (data) => {
-   // dispatch work event to viewed listener
-   return viewed.worked(data);
-  };
-  // make handle event in modeled listener
-  modeled.modified.handled = (data) => {
    // dispatch handle event to viewed listener
    return viewed.handled(data);
   };
-  // make query event in modeled listener
-  modeled.modified.queried = (data) => {
-   // dispatch query event to viewed listener
-   return viewed.queried(data);
-  };
-  // make listen event in modeled listener
-  modeled.modified.listened = (data) => {
-   // dispatch listen event to viewed listener
-   return viewed.listened(data);
-  };
-  // make unlisten event in modeled listener
-  modeled.modified.unlistened = (data) => {
-   // dispatch unlisten event to viewed listener
-   return viewed.unlistened(data);
+  // make work event in viewed listener
+  viewed.modified.worked = (data) => {
+   // dispatch handle event to modeled listener
+   return modeled.handled(data);
   };
  }
 
 }
 
-describe("Thoaded", () => {
- const data = Tested.prototype;
- const controlled = new TestControlled();
- it("Added", () => {
-  return controlled.modeled.added(data);
+// make a controlled listener
+const exampled = new ExampleControlled();
+
+// dispatch work event to modeled listener
+module.exports = exampled.modeled.worked(Exampled.prototype)
+ .then((data) => {
+  // dispatch work event to viewed listener
+  return exampled.viewed.worked(data);
+ })
+ .then(() => {
+  // return exampled
+  return exampled;
  });
- it("Updated", () => {
-  return controlled.modeled.updated(data);
- });
- it("Deleted", () => {
-  return controlled.modeled.deleted(data);
- });
- it("Readed", () => {
-  return controlled.modeled.readed(data);
- });
- it("Worked", () => {
-  return controlled.modeled.worked(data);
- });
- it("Handled", () => {
-  return controlled.modeled.handled(data);
- });
- it("Queried", () => {
-  return controlled.modeled.queried(data);
- });
- it("Listened", () => {
-  return controlled.modeled.listened(data);
- });
- it("Unlistened", () => {
-  return controlled.modeled.unlistened(data);
- });
-});

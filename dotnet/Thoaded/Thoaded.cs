@@ -5,7 +5,7 @@ namespace Thoaded
 {
 
  /// <summary>
- /// The source for a library for simple and fast design pattern of model,
+ /// The open source initiative for a library for simple and fast design pattern that extends model,
  /// view and controller in supported modern programming languages.
  /// Author: Walber Antonio Ramos Beltrame (walber.beltrame@gmail.com)
  /// <summary>
