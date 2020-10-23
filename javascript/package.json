@@ -29,7 +29,7 @@
     "url": "git+https://github.com/walberbeltrame/thoaded.git"
   },
   "keywords": [
-    "thoaded"
+    "asynchronous-events", "library", "model-view-controller", "thoaded"
   ],
   "files": [
     "index.js",
