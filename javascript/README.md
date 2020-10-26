@@ -172,9 +172,12 @@ Thoaded supports all environments that are [ECMAScript 6](https://ecma-internati
 </html>
 ```
 ```javascript
-import {Modeled, Viewed, Controlled} from "<path>/thoaded.min.js";
+import {Thoaded, Modeled, Viewed, Controlled} from "<path>/thoaded.min.js";
 ```
 Additionally, also supported by build in [Babel](https://babeljs.io/).
 ```html
   <script src="<path>/thoaded.babel.min.js"></script>
 ```
+
+## TypeScript
+Thoaded supports TypeScript.
